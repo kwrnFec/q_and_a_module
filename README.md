@@ -17,11 +17,10 @@
 
 ## Usage
 
-> Some usage instructions
+> To run the app locally, run "npm run server-dev" on the terminal, then
+  navigate to localhost:3001 in your web browser.
 
 ## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
 - etc
