@@ -4,10 +4,9 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/kwrnFec/related_items_module
+  - https://github.com/kwrnFec/overview_module
+  - https://github.com/kwrnFec/ratings_and_reviews_module
 
 ## Table of Contents
 
