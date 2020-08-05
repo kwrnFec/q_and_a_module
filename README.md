@@ -1,12 +1,13 @@
-# Project Name
+# q_and_a_module
 
-> Project description
+> This repo includes the code needed for the Questions and Answers module of an item description page.
 
 ## Related Projects
 
   - https://github.com/kwrnFec/related_items_module
   - https://github.com/kwrnFec/overview_module
   - https://github.com/kwrnFec/ratings_and_reviews_module
+  - https://github.com/kwrnFec/noah_proxy
 
 ## Table of Contents
 
