@@ -5,7 +5,13 @@ import {shallow} from 'enzyme';
 describe('App Component', () => {
   it('starts with a count of 0', () => {
     const wrapper = shallow(<App />);
-    const countState = wrapper.state().counter;
-    expect(countState).toEqual(0);
+    const text = wrapper.find('.count').text();
+
+    expect(text).toEqual('Current Count: 0');
+  })
+
+  it('increments the count when the button is clicked', () => {
+    const wrapper = shallow(<App />);
+
   })
 });

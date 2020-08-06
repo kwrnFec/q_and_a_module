@@ -20,7 +20,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div>Current Count: {this.state.counter}</div>
+        <div className='count'>Current Count: {this.state.counter}</div>
         <button onClick={this.increment}>Increment Counter</button>
       </div>
     );
