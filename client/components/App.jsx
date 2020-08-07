@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+
+// for testing I think
 import 'regenerator-runtime/runtime';
 
 import Question from './Question.jsx';
@@ -12,7 +14,7 @@ class App extends React.Component {
       questions: [],
 
       // will get id from proxy, I think
-      product_id: 5
+      product_id: 3
     }
 
     this.getQuestions = this.getQuestions.bind(this);
@@ -32,7 +34,8 @@ class App extends React.Component {
       }
     })
       .then((response) => {
-        this.setState({ questions: response.data });
+        let questions = response.data.sort((a, b) => (a.question_helpfulness > b.question_helpfulness) ? -1 : 1)
+        this.setState({ questions: questions });
       })
       .catch((err) => {
         console.log(err);

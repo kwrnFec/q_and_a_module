@@ -1,6 +1,6 @@
 const express = require("express");
 const axios = require("axios");
-const apiUrl = 'http://52.26.193.201:3000';
+const apiUrl = 'http://52.26.193.201:3000/';
 
 let app = express();
 
@@ -10,27 +10,39 @@ app.use(express.json());
 
 app.get('/questions', (req, res) => {
   let { qLimit, aLimit, product_id } = req.query;
-  let url = apiUrl + '/qa/' + product_id;
+  let url = apiUrl + 'qa/' + product_id;
   axios.get(url)
     .then((response) => {
+      // limits amount of questions displayed
       let questions = response.data.results.slice(0, qLimit);
 
+      // limits amount of answers per question displayed
       for (let i = 0; i < questions.length; i++) {
         let limitedAnswers = {};
-        let j = 0
-        while (Object.keys(limitedAnswers).length < aLimit) {
-          let ids = Object.keys(questions[i].answers);
+
+        let ids = Object.keys(questions[i].answers);
+        let j = 0;
+        while (Object.keys(limitedAnswers).length < aLimit && ids.length !== 0) {
           limitedAnswers[ids[j]] = questions[i].answers[ids[j]];
           j++;
         }
 
         questions[i].answers = limitedAnswers;
       }
-
       res.send(questions);
     })
     .catch((err) => {
       console.log(err);
+    })
+});
+
+app.put('/answer/helpful', (req, res) => {
+  let answer_id = req.body.answer_id;
+  let url = apiUrl + `qa/answer/${answer_id}/helpful`;
+
+  axios.put(url)
+    .then(() => {
+      res.send();
     })
 });
 
