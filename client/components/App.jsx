@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import 'regenerator-runtime/runtime';
+
 import Question from './Question.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -15,15 +18,16 @@ class App extends React.Component {
     this.getQuestions = this.getQuestions.bind(this);
   }
 
-  componentDidMount() {
-    // doesn't limit length yet
+  async componentDidMount() {
     this.getQuestions();
   }
 
-  getQuestions(limit = 2) {
+  // async things have to do with testing I think
+  async getQuestions(qLimit = 4, aLimit = 2) {
     axios.get('/questions', {
       params: {
-        limit: limit,
+        qLimit: qLimit,
+        aLimit: aLimit,
         product_id: this.state.product_id
       }
     })

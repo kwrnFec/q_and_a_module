@@ -9,11 +9,25 @@ app.use(express.static('public'));
 app.use(express.json());
 
 app.get('/questions', (req, res) => {
-  let { limit, product_id } = req.query;
+  let { qLimit, aLimit, product_id } = req.query;
   let url = apiUrl + '/qa/' + product_id;
   axios.get(url)
     .then((response) => {
-      res.send(response.data.results)
+      let questions = response.data.results.slice(0, qLimit);
+
+      for (let i = 0; i < questions.length; i++) {
+        let limitedAnswers = {};
+        let j = 0
+        while (Object.keys(limitedAnswers).length < aLimit) {
+          let ids = Object.keys(questions[i].answers);
+          limitedAnswers[ids[j]] = questions[i].answers[ids[j]];
+          j++;
+        }
+
+        questions[i].answers = limitedAnswers;
+      }
+
+      res.send(questions);
     })
     .catch((err) => {
       console.log(err);
