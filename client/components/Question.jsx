@@ -47,10 +47,11 @@ class Question extends React.Component {
 
     return (
       <div>
-        <Container>
+        <Container style={{border: '2px solid black', margin: '5px'}}>
           <Row>
-            <Col><h5>Q: {this.props.question.question_body}</h5></Col>
-            <Col>Helpful? <Button variant="primary" className="btn-primary"
+            <Col md='auto'><h5>Q: {this.props.question.question_body}</h5></Col>
+            <Col></Col>
+            <Col xs={6}>Helpful? <Button variant="primary" className="btn-primary"
               onClick={this.incrementHelpfulQuestion} >
               Yes ({this.state.helpfulness})</Button>
             </Col>
