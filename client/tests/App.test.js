@@ -4,25 +4,12 @@ import { shallow } from 'enzyme';
 
 
 describe('App Component', () => {
-  it('should have some test', () => {
-    // just so that I can check that testing is active
-    expect(true).toEqual(true);
+  it('should call the getQuestions funciton', () => {
+    const wrapper = shallow(<App />)
+
+    const spyGetQuestions = jest.spyOn(wrapper.instance(), 'getQuestions');
+    wrapper.instance().forceUpdate();
+    wrapper.instance().componentDidMount();
+    expect(spyGetQuestions).toHaveBeenCalled();
   })
-
-  // Tests not working, can't get it to wait for async
-  // may be some issue with making api request
-  // it('gets a list of questions', async () => {
-  //   expect.assertions(1);
-  //   const wrapper = shallow(<App />);
-
-  //   const instance = wrapper.instance();
-
-  //   await instance.componentDidMount().resolve(true);
-
-  //   const questions = wrapper.state('questions');
-
-  //   expect(questions).not.toHaveLength(0);
-  // })
-
-
 });

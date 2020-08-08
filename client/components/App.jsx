@@ -1,10 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 
-// for testing I think
-import 'regenerator-runtime/runtime';
-
 import Question from './Question.jsx';
+
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 
 class App extends React.Component {
@@ -13,19 +14,18 @@ class App extends React.Component {
     this.state = {
       questions: [],
 
-      // will get id from proxy, I think
+      // will get real id from proxy, I think
       product_id: 3
     }
 
     this.getQuestions = this.getQuestions.bind(this);
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this.getQuestions();
   }
 
-  // async things have to do with testing I think
-  async getQuestions(qLimit = 4, aLimit = 2) {
+  getQuestions(qLimit = 4, aLimit = 2) {
     axios.get('/questions', {
       params: {
         qLimit: qLimit,
@@ -34,22 +34,35 @@ class App extends React.Component {
       }
     })
       .then((response) => {
-        let questions = response.data.sort((a, b) => (a.question_helpfulness > b.question_helpfulness) ? -1 : 1)
+        let questions = response.data.sort((a, b) => (a.question_helpfulness > b.question_helpfulness) ? -1 : 1);
         this.setState({ questions: questions });
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       })
   }
 
   render() {
     return (
       <div>
-        {this.state.questions.map((question, index) => {
-          return (
-            <Question question={question} key={index}/>
-          );
-        })}
+        <Accordion>
+          <Card>
+            <Card.Header>
+              <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                Questions and Answers
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body>
+                {this.state.questions.map((question, index) => {
+                  return (
+                    <Question question={question} key={index} />
+                  );
+                })}
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+        </Accordion>
       </div>
     );
   }

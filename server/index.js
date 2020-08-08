@@ -46,6 +46,16 @@ app.put('/answer/helpful', (req, res) => {
     })
 });
 
+app.put('/question/helpful', (req, res) => {
+  let question_id = req.body.question_id;
+  let url = apiUrl + `qa/question/${question_id}/helpful`;
+
+  axios.put(url)
+    .then(() => {
+      res.send();
+    })
+});
+
 const port = 3001;
 
 app.listen(port, () => {
