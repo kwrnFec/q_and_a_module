@@ -34,8 +34,9 @@ class App extends React.Component {
       }
     })
       .then((response) => {
-        let questions = response.data.sort((a, b) => (a.question_helpfulness > b.question_helpfulness) ? -1 : 1);
-        this.setState({ questions: questions });
+        let isMoreQuestions = response.data.isMoreQuestions;
+        let questions = response.data.questions.sort((a, b) => (a.question_helpfulness > b.question_helpfulness) ? -1 : 1);
+        this.setState({ questions, isMoreQuestions });
       })
       .catch((err) => {
         // console.log(err);

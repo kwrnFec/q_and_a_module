@@ -13,6 +13,9 @@ app.get('/questions', (req, res) => {
   let url = apiUrl + 'qa/' + product_id;
   axios.get(url)
     .then((response) => {
+      // checks if there is more than qLimit questions
+      let isMoreQuestions = response.data.results.length > qLimit;
+
       // limits amount of questions displayed
       let questions = response.data.results.slice(0, qLimit);
 
@@ -27,9 +30,12 @@ app.get('/questions', (req, res) => {
           j++;
         }
 
+        let isMoreAnswers = aLimit < ids.length;
+        limitedAnswers.isMoreAnswers = isMoreAnswers;
+
         questions[i].answers = limitedAnswers;
       }
-      res.send(questions);
+      res.send({questions, isMoreQuestions});
     })
     .catch((err) => {
       console.log(err);

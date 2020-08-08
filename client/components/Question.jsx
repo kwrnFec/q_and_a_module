@@ -29,10 +29,15 @@ class Question extends React.Component {
   }
 
   render() {
+    let isMoreAnswers;
     let answersObj = this.props.question.answers;
     let answers = [];
     for (let id in answersObj) {
-      answers.push(answersObj[id]);
+      if (id === 'isMoreAnswers') {
+        isMoreAnswers = answersObj[id];
+      } else {
+        answers.push(answersObj[id]);
+      }
     }
     // sort array of answers by helpfulness
     answers.sort((a, b) => (a.helpfulness > b.helpfulness) ? -1 : 1);
@@ -45,9 +50,15 @@ class Question extends React.Component {
       }
     }
 
+    let moreAnswers = <span></span>;
+    if (isMoreAnswers) {
+      moreAnswers = <Col xs={6}><Button>More Answers</Button></Col>;
+    }
+    console.log(moreAnswers);
+
     return (
       <div>
-        <Container style={{border: '2px solid black', margin: '5px'}}>
+        <Container style={{ border: '2px solid black', margin: '5px' }}>
           <Row>
             <Col md='auto'><h5>Q: {this.props.question.question_body}</h5></Col>
             <Col></Col>
@@ -64,6 +75,10 @@ class Question extends React.Component {
                 );
               })}
             </Col>
+          </Row>
+          <Row>
+            <Col></Col>
+            {moreAnswers}
           </Row>
         </Container>
       </div>
