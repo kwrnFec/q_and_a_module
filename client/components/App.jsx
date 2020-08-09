@@ -15,7 +15,7 @@ class App extends React.Component {
       questions: [],
 
       // will get real id from proxy, I think
-      product_id: 3
+      product_id: 5
     }
 
     this.getQuestions = this.getQuestions.bind(this);

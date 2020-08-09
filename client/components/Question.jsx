@@ -12,6 +12,9 @@ class Question extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      question: this.props.question,
+      answers: this.props.question.answers,
+      isMoreAnswers: this.props.question.answers.isMoreAnswers,
       helpfulness: this.props.question.question_helpfulness,
       helpfulClicked: false
     }
@@ -21,24 +24,44 @@ class Question extends React.Component {
 
   incrementHelpfulQuestion() {
     if (this.state.helpfulClicked === false) {
-      axios.put('/question/helpful', { question_id: this.props.question.question_id });
+      axios.put('/question/helpful', { question_id: this.state.question.question_id });
       this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
     } else {
       alert('You can only mark an question as helpful once.');
     }
   }
 
+  getMoreAnswers() {
+    axios.get('/moreAnswers', {
+      params: {
+        question_id: this.state.question.question_id
+      }
+    })
+      .then((response) => {
+        let answers = response.data.answers;
+        let isMoreAnswers = response.data.isMoreAnswers;
+        this.setState({ answers, isMoreAnswers });
+      })
+  }
+
+  collapseAnswers() {
+    this.setState({ answers: this.state.answers.slice(0, 2), isMoreAnswers: true });
+  }
+
   render() {
-    let isMoreAnswers;
-    let answersObj = this.props.question.answers;
-    let answers = [];
-    for (let id in answersObj) {
-      if (id === 'isMoreAnswers') {
-        isMoreAnswers = answersObj[id];
-      } else {
-        answers.push(answersObj[id]);
+    let answers;
+    if (Array.isArray(this.state.answers)) {
+      answers = this.state.answers;
+    } else {
+      let answersObj = this.state.answers;
+      answers = [];
+      for (let id in answersObj) {
+        if (id !== 'isMoreAnswers') {
+          answers.push(answersObj[id]);
+        }
       }
     }
+
     // sort array of answers by helpfulness
     answers.sort((a, b) => (a.helpfulness > b.helpfulness) ? -1 : 1);
 
@@ -50,24 +73,27 @@ class Question extends React.Component {
       }
     }
 
-    let moreAnswers = <span></span>;
-    if (isMoreAnswers) {
-      moreAnswers = <Col xs={6}><Button>More Answers</Button></Col>;
+    let moreAnswers;
+    if (this.state.isMoreAnswers) {
+      moreAnswers = <Col xs={6}><Button onClick={this.getMoreAnswers.bind(this)}>See More Answers</Button></Col>;
+    } else if (answers.length <= 2) {
+      moreAnswers = <span></span>;
+    } else {
+      moreAnswers = <Col xs={6}><Button onClick={this.collapseAnswers.bind(this)}>Collapse Answers</Button></Col>;
     }
-    console.log(moreAnswers);
 
     return (
       <div>
         <Container style={{ border: '2px solid black', margin: '5px' }}>
           <Row>
-            <Col md='auto'><h5>Q: {this.props.question.question_body}</h5></Col>
+            <Col xs='auto'><h5>Q: {this.state.question.question_body}</h5></Col>
             <Col></Col>
             <Col xs={6}>Helpful? <Button variant="primary" className="btn-primary"
               onClick={this.incrementHelpfulQuestion} >
               Yes ({this.state.helpfulness})</Button>
             </Col>
           </Row>
-          <Row>
+          <Row className='answerRow'>
             <Col>
               {answers.map((answer, index) => {
                 return (

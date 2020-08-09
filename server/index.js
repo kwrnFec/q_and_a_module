@@ -35,7 +35,22 @@ app.get('/questions', (req, res) => {
 
         questions[i].answers = limitedAnswers;
       }
-      res.send({questions, isMoreQuestions});
+      res.send({ questions, isMoreQuestions });
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+});
+
+app.get('/moreAnswers', (req, res) => {
+  let { question_id } = req.query;
+  let url = apiUrl + `qa/${question_id}/answers`;
+
+  axios.get(url)
+    .then((response) => {
+      let answers = response.data.results;
+      let isMoreAnswers = false;
+      res.send({ answers, isMoreAnswers });
     })
     .catch((err) => {
       console.log(err);
