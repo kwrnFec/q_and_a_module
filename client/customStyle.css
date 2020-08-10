@@ -29,6 +29,10 @@
   margin-left: 5vh;
 }
 
+.aButtonCol {
+  margin-left: 3vh;
+}
+
 .answerRow {
   max-height: 50vh;
   overflow-y: auto;

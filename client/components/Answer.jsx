@@ -84,7 +84,7 @@ class Answer extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col><span>Helpful? </span>
+          <Col className='aButtonCol'><span>Helpful? </span>
             {helpfulButton}
             {reportButton}
           </Col>
