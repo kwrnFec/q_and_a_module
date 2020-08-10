@@ -16,10 +16,12 @@ class Question extends React.Component {
       answers: this.props.question.answers,
       isMoreAnswers: this.props.question.answers.isMoreAnswers,
       helpfulness: this.props.question.question_helpfulness,
-      helpfulClicked: false
+      helpfulClicked: false,
+      reported: false
     }
 
     this.incrementHelpfulQuestion = this.incrementHelpfulQuestion.bind(this);
+    this.reportQuestion = this.reportQuestion.bind(this);
   }
 
   incrementHelpfulQuestion() {
@@ -29,6 +31,17 @@ class Question extends React.Component {
     } else {
       alert('You can only mark an question as helpful once.');
     }
+  }
+
+  reportQuestion() {
+    axios.put('/question/report', { question_id: this.state.question.question_id })
+      .catch((err) => {
+        // commented for tests
+        // un-comment to check errors
+        // console.log(err);
+      })
+
+    this.setState({ reported: true });
   }
 
   getMoreAnswers() {
@@ -49,6 +62,7 @@ class Question extends React.Component {
   }
 
   render() {
+
     let answers;
     if (Array.isArray(this.state.answers)) {
       answers = this.state.answers;
@@ -75,22 +89,29 @@ class Question extends React.Component {
 
     let moreAnswers;
     if (this.state.isMoreAnswers) {
-      moreAnswers = <Col xs={6}><Button onClick={this.getMoreAnswers.bind(this)}>See More Answers</Button></Col>;
+      moreAnswers = <Button className='moreAnswers' onClick={this.getMoreAnswers.bind(this)}>See More Answers</Button>;
     } else if (answers.length <= 2) {
       moreAnswers = <span></span>;
     } else {
-      moreAnswers = <Col xs={6}><Button onClick={this.collapseAnswers.bind(this)}>Collapse Answers</Button></Col>;
+      moreAnswers = <Button className='collapseAnswers' onClick={this.collapseAnswers.bind(this)}>Collapse Answers</Button>;
+    }
+
+    let reportButton = <Button variant="danger" className="qReportBtn" onClick={this.reportQuestion} >Report</Button>;
+    if (this.state.reported) {
+      reportButton = <Button variant="secondary" className="qReportBtn btn-secondary">Reported</Button>;
     }
 
     return (
       <div>
-        <Container style={{ border: '2px solid black', margin: '5px' }}>
+        <Container className='question'>
           <Row>
             <Col xs='auto'><h5>Q: {this.state.question.question_body}</h5></Col>
-            <Col></Col>
-            <Col xs={6}>Helpful? <Button variant="primary" className="qHelpfulButton"
+          </Row>
+          <Row>
+            <Col xs={6} className='qButtonRow'>Helpful? <Button variant="primary" className="qHelpfulBtn"
               onClick={this.incrementHelpfulQuestion} >
               Yes ({this.state.helpfulness})</Button>
+              {reportButton}
             </Col>
           </Row>
           <Row className='answerRow'>
@@ -102,8 +123,7 @@ class Question extends React.Component {
               })}
             </Col>
           </Row>
-          <Row>
-            <Col></Col>
+          <Row className='moreAnswersRow'>
             {moreAnswers}
           </Row>
         </Container>

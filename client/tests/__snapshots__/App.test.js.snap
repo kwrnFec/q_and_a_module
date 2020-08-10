@@ -1,0 +1,557 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component should match test snapshot 1`] = `
+<div
+  className="qaApp"
+>
+  <div
+    className="qaAppInner accordion"
+  >
+    <div
+      className="card"
+    >
+      <div
+        className="card-header"
+      >
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Questions and Answers
+        </button>
+      </div>
+      <div
+        aria-expanded={null}
+        className="collapse"
+      >
+        <div
+          className="card-body"
+        >
+          <div>
+            <div
+              className="question container"
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="col-auto"
+                >
+                  <h5>
+                    Q: 
+                    Can I wash it?
+                  </h5>
+                </div>
+              </div>
+              <div
+                className="row"
+              >
+                <div
+                  className="qButtonRow col-6"
+                >
+                  Helpful? 
+                  <button
+                    className="qHelpfulBtn btn btn-primary"
+                    disabled={false}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Yes (
+                    23
+                    )
+                  </button>
+                  <button
+                    className="qReportBtn btn btn-danger"
+                    disabled={false}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Report
+                  </button>
+                </div>
+              </div>
+              <div
+                className="answerRow row"
+              >
+                <div
+                  className="col"
+                >
+                  <div
+                    className="answer container"
+                  >
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        A: 
+                        I wouldn't machine wash it
+                      </div>
+                    </div>
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        by 
+                        skilover
+                        , 
+                        November 04, 2017
+                      </div>
+                    </div>
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        <span>
+                          Helpful? 
+                        </span>
+                        <button
+                          className="aHelpfulBtn btn btn-primary"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Yes (
+                          6
+                          )
+                        </button>
+                        <button
+                          className="aReportBtn btn btn-danger"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Report
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="answer container"
+                  >
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        A: 
+                        Only if you want to ruin it!
+                      </div>
+                    </div>
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        by 
+                        skilover
+                        , 
+                        November 04, 2017
+                      </div>
+                    </div>
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        <span>
+                          Helpful? 
+                        </span>
+                        <button
+                          className="aHelpfulBtn btn btn-primary"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Yes (
+                          5
+                          )
+                        </button>
+                        <button
+                          className="aReportBtn btn btn-danger"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Report
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="moreAnswersRow row"
+              >
+                <button
+                  className="moreAnswers btn btn-primary"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  See More Answers
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              className="question container"
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="col-auto"
+                >
+                  <h5>
+                    Q: 
+                    How long does it last?
+                  </h5>
+                </div>
+              </div>
+              <div
+                className="row"
+              >
+                <div
+                  className="qButtonRow col-6"
+                >
+                  Helpful? 
+                  <button
+                    className="qHelpfulBtn btn btn-primary"
+                    disabled={false}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Yes (
+                    5
+                    )
+                  </button>
+                  <button
+                    className="qReportBtn btn btn-danger"
+                    disabled={false}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Report
+                  </button>
+                </div>
+              </div>
+              <div
+                className="answerRow row"
+              >
+                <div
+                  className="col"
+                >
+                  <div
+                    className="answer container"
+                  >
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        A: 
+                        Some of the seams started splitting the first time I wore it!
+                      </div>
+                    </div>
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        by 
+                        sillyguy
+                        , 
+                        November 28, 2019
+                      </div>
+                    </div>
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        <span>
+                          Helpful? 
+                        </span>
+                        <button
+                          className="aHelpfulBtn btn btn-primary"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Yes (
+                          6
+                          )
+                        </button>
+                        <button
+                          className="aReportBtn btn btn-danger"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Report
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="answer container"
+                  >
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        A: 
+                        Super Long Time
+                      </div>
+                    </div>
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        by 
+                        JJ
+                        , 
+                        June 30, 2020
+                      </div>
+                    </div>
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        <span>
+                          Helpful? 
+                        </span>
+                        <button
+                          className="aHelpfulBtn btn btn-primary"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Yes (
+                          0
+                          )
+                        </button>
+                        <button
+                          className="aReportBtn btn btn-danger"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Report
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="moreAnswersRow row"
+              >
+                <button
+                  className="moreAnswers btn btn-primary"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  See More Answers
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              className="question container"
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="col-auto"
+                >
+                  <h5>
+                    Q: 
+                    Where is this product made?
+                  </h5>
+                </div>
+              </div>
+              <div
+                className="row"
+              >
+                <div
+                  className="qButtonRow col-6"
+                >
+                  Helpful? 
+                  <button
+                    className="qHelpfulBtn btn btn-primary"
+                    disabled={false}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Yes (
+                    2
+                    )
+                  </button>
+                  <button
+                    className="qReportBtn btn btn-danger"
+                    disabled={false}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Report
+                  </button>
+                </div>
+              </div>
+              <div
+                className="answerRow row"
+              >
+                <div
+                  className="col"
+                >
+                  <div
+                    className="answer container"
+                  >
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        A: 
+                        Canada
+                      </div>
+                    </div>
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        by 
+                        footballfan
+                        , 
+                        August 06, 2018
+                      </div>
+                    </div>
+                    <div
+                      className="row"
+                    >
+                      <div
+                        className="col"
+                      >
+                        <span>
+                          Helpful? 
+                        </span>
+                        <button
+                          className="aHelpfulBtn btn btn-primary"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Yes (
+                          9
+                          )
+                        </button>
+                        <button
+                          className="aReportBtn btn btn-danger"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Report
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="moreAnswersRow row"
+              >
+                <span />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              className="question container"
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="col-auto"
+                >
+                  <h5>
+                    Q: 
+                    What is the fabric made out of?
+                  </h5>
+                </div>
+              </div>
+              <div
+                className="row"
+              >
+                <div
+                  className="qButtonRow col-6"
+                >
+                  Helpful? 
+                  <button
+                    className="qHelpfulBtn btn btn-primary"
+                    disabled={false}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Yes (
+                    1
+                    )
+                  </button>
+                  <button
+                    className="qReportBtn btn btn-danger"
+                    disabled={false}
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Report
+                  </button>
+                </div>
+              </div>
+              <div
+                className="answerRow row"
+              >
+                <div
+                  className="col"
+                />
+              </div>
+              <div
+                className="moreAnswersRow row"
+              >
+                <span />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

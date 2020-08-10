@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Answer Component should match test snapshot 1`] = `
+<div
+  className="answer container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      A: 
+      I've thrown it in the wash and it seems fine
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      by 
+      skilover
+      , 
+      January 04, 2017
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <span>
+        Helpful? 
+      </span>
+      <button
+        className="aHelpfulBtn btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Yes (
+        9
+        )
+      </button>
+      <button
+        className="aReportBtn btn btn-danger"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Report
+      </button>
+    </div>
+  </div>
+</div>
+`;

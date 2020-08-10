@@ -12,19 +12,41 @@ class Answer extends React.Component {
     super(props);
     this.state = {
       helpfulness: this.props.answer.helpfulness,
-      helpfulClicked: false
+      helpfulClicked: false,
+      reported: false
     }
 
     this.incrementHelpful = this.incrementHelpful.bind(this);
+    this.reportAnswer = this.reportAnswer.bind(this);
   }
 
   incrementHelpful() {
-    if (this.state.helpfulClicked === false) {
-      axios.put('/answer/helpful', { answer_id: this.props.answer.id });
-      this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
-    } else {
-      alert('You can only mark an answer as helpful once.');
+    // handles user made answers
+    let answer_id = this.props.answer.id;
+    if (this.props.answer.answer_id) {
+      answer_id = this.props.answer.answer_id;
     }
+    axios.put('/answer/helpful', { answer_id })
+      .catch((err) => {
+        // commented for tests
+        // un-comment to check errors
+        // console.log(err);
+      })
+    this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
+  }
+
+  reportAnswer() {
+    let answer_id = this.props.answer.id;
+    if (this.props.answer.answer_id) {
+      answer_id = this.props.answer.answer_id;
+    }
+    axios.put('/answer/report', { answer_id })
+      .catch((err) => {
+        // commented for tests
+        // un-comment to check errors
+        // console.log(err);
+      })
+    this.setState({ reported: true });
   }
 
   convertDate(dateString) {
@@ -42,8 +64,18 @@ class Answer extends React.Component {
 
   render() {
 
+    let reportButton = <Button variant="danger" className="aReportBtn" onClick={this.reportAnswer} >Report</Button>;
+    if (this.state.reported) {
+      reportButton = <Button variant="secondary" className="aReportBtn btn-secondary" >Reported</Button>;
+    }
+
+    let helpfulButton = <Button variant="primary" className="aHelpfulBtn" onClick={this.incrementHelpful} >Yes ({this.state.helpfulness})</Button>;
+    if (this.state.helpfulClicked) {
+      helpfulButton = <Button variant="success" className="aHelpfulBtn" >Yes ({this.state.helpfulness})</Button>;
+    }
+
     return (
-      <Container>
+      <Container className='answer'>
         <Row>
           <Col>A: {this.props.answer.body}</Col>
         </Row>
@@ -52,10 +84,14 @@ class Answer extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col>Helpful? <Button variant="primary" className="btn-primary" onClick={this.incrementHelpful} >Yes ({this.state.helpfulness})</Button></Col>
+          <Col><span>Helpful? </span>
+            {helpfulButton}
+            {reportButton}
+          </Col>
         </Row>
       </Container>
     );
+
   }
 
 }

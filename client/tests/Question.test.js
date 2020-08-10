@@ -11,7 +11,7 @@ describe('Question Component', () => {
     const wrapper = shallow(<Question question={testQuestion} key={0}/>);
     let preClickHelpfulness = wrapper.state('helpfulness');
 
-    let helpfulButton = wrapper.find('.qHelpfulButton');
+    let helpfulButton = wrapper.find('.qHelpfulBtn');
 
     helpfulButton.simulate('click');
 
@@ -20,6 +20,19 @@ describe('Question Component', () => {
 
     expect(helpfulState).toEqual(true);
     expect(postClickHelpfulness).toEqual(preClickHelpfulness + 1);
+  })
+
+  it('should change report button to gray "Reported" button if report button is clicked', () => {
+    const wrapper = shallow(<Question question={testQuestion} key={0}/>);
+
+    let reportButton = wrapper.find('.qReportBtn');
+
+    reportButton.simulate('click');
+
+    reportButton = wrapper.find('.qReportBtn');
+
+    expect(reportButton.hasClass('btn-secondary')).toEqual(true);
+    expect(reportButton.text()).toEqual('Reported');
   })
 
   it('should match test snapshot', () => {
