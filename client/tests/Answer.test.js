@@ -22,16 +22,18 @@ describe('Answer Component', () => {
     expect(postClickHelpfulness).toEqual(preClickHelpfulness + 1);
   })
 
-  it('should not display answer if report button is clicked', () => {
+  it('should change report button to gray "Reported" button if report button is clicked', () => {
     const wrapper = shallow(<Answer answer={testAnswer} key={0}/>);
 
     let reportButton = wrapper.find('.aReportBtn');
 
-    expect(wrapper.find('.answer').exists()).toBeTruthy();
-
     reportButton.simulate('click');
 
-    expect(wrapper.find('.answer').exists()).toBeFalsy();
+    // refreshes reportButton
+    reportButton = wrapper.find('.aReportBtn');
+
+    expect(reportButton.hasClass('btn-secondary')).toEqual(true);
+    expect(reportButton.text()).toEqual('Reported');
   })
 
   it('should match test snapshot', () => {
