@@ -88,7 +88,7 @@ class Question extends React.Component {
           <Row>
             <Col xs='auto'><h5>Q: {this.state.question.question_body}</h5></Col>
             <Col></Col>
-            <Col xs={6}>Helpful? <Button variant="primary" className="btn-primary"
+            <Col xs={6}>Helpful? <Button variant="primary" className="qHelpfulButton"
               onClick={this.incrementHelpfulQuestion} >
               Yes ({this.state.helpfulness})</Button>
             </Col>
