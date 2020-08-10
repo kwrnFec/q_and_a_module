@@ -3,13 +3,7 @@
 exports[`Question Component should match test snapshot 1`] = `
 <div>
   <div
-    className="container"
-    style={
-      Object {
-        "border": "2px solid black",
-        "margin": "5px",
-      }
-    }
+    className="question container"
   >
     <div
       className="row"
@@ -22,11 +16,12 @@ exports[`Question Component should match test snapshot 1`] = `
           Can I wash it?
         </h5>
       </div>
+    </div>
+    <div
+      className="row"
+    >
       <div
-        className="col"
-      />
-      <div
-        className="col-6"
+        className="qButtonRow col-6"
       >
         Helpful? 
         <button
@@ -39,6 +34,14 @@ exports[`Question Component should match test snapshot 1`] = `
           23
           )
         </button>
+        <button
+          className="btn-primary qReportBtn btn btn-danger"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Report
+        </button>
       </div>
     </div>
     <div
@@ -48,7 +51,7 @@ exports[`Question Component should match test snapshot 1`] = `
         className="col"
       >
         <div
-          className="container"
+          className="answer container"
         >
           <div
             className="row"
@@ -103,7 +106,7 @@ exports[`Question Component should match test snapshot 1`] = `
           </div>
         </div>
         <div
-          className="container"
+          className="answer container"
         >
           <div
             className="row"
@@ -160,23 +163,16 @@ exports[`Question Component should match test snapshot 1`] = `
       </div>
     </div>
     <div
-      className="row"
+      className="moreAnswersRow row"
     >
-      <div
-        className="col"
-      />
-      <div
-        className="col-6"
+      <button
+        className="moreAnswers btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
       >
-        <button
-          className="btn btn-primary"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
-        >
-          See More Answers
-        </button>
-      </div>
+        See More Answers
+      </button>
     </div>
   </div>
 </div>

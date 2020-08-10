@@ -67,16 +67,6 @@ app.put('/answer/helpful', (req, res) => {
     })
 });
 
-app.put('/question/helpful', (req, res) => {
-  let question_id = req.body.question_id;
-  let url = apiUrl + `qa/question/${question_id}/helpful`;
-
-  axios.put(url)
-    .then(() => {
-      res.send();
-    })
-});
-
 app.put('/answer/report', (req, res) => {
   let answer_id = req.body.answer_id;
   let url = apiUrl + `qa/answer/${answer_id}/report`;
@@ -87,6 +77,26 @@ app.put('/answer/report', (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+    })
+});
+
+app.put('/question/helpful', (req, res) => {
+  let question_id = req.body.question_id;
+  let url = apiUrl + `qa/question/${question_id}/helpful`;
+
+  axios.put(url)
+    .then(() => {
+      res.send();
+    })
+});
+
+app.put('/question/report', (req, res) => {
+  let question_id = req.body.question_id;
+  let url = apiUrl + `qa/question/${question_id}/report`;
+
+  axios.put(url)
+    .then(() => {
+      res.send();
     })
 });
 

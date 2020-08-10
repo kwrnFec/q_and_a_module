@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
 
 class Answer extends React.Component {
 
@@ -27,7 +28,12 @@ class Answer extends React.Component {
       if (this.props.answer.answer_id) {
         answer_id = this.props.answer.answer_id;
       }
-      axios.put('/answer/helpful', { answer_id });
+      axios.put('/answer/helpful', { answer_id })
+        .catch((err) => {
+          // commented for tests
+          // un-comment to check errors
+          // console.log(err);
+        })
       this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
     } else {
       // may replace with something nicer looking later
@@ -37,10 +43,15 @@ class Answer extends React.Component {
 
   reportAnswer() {
     let answer_id = this.props.answer.id;
-      if (this.props.answer.answer_id) {
-        answer_id = this.props.answer.answer_id;
-      }
-    axios.put('/answer/report', { answer_id });
+    if (this.props.answer.answer_id) {
+      answer_id = this.props.answer.answer_id;
+    }
+    axios.put('/answer/report', { answer_id })
+      .catch((err) => {
+        // commented for tests
+        // un-comment to check errors
+        // console.log(err);
+      })
     this.setState({ reported: true });
   }
 
@@ -60,7 +71,7 @@ class Answer extends React.Component {
   render() {
     if (!this.state.reported) {
       return (
-        <Container>
+        <Container className='answer'>
           <Row>
             <Col>A: {this.props.answer.body}</Col>
           </Row>
@@ -77,7 +88,7 @@ class Answer extends React.Component {
         </Container>
       );
     } else {
-      return (<span></span>);
+      return (<Alert variant='dark' className='reportedAnswer'>You have reported this Answer.</Alert>);
     }
 
   }

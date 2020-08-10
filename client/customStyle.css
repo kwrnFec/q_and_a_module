@@ -1,6 +1,6 @@
 /* Add custom styling below */
 
-.qaApp {
+.qaApp, .moreAnswersRow {
   display: flex;
   justify-content: center;
 }
@@ -9,15 +9,39 @@
   width: 80vw;
 }
 
+.question {
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.qButtonRow {
+  margin-left: 5vh;
+}
+
 .answerRow {
   max-height: 50vh;
   overflow-y: auto;
 }
 
-.aHelpfulBtn {
+.qHelpfulBtn, .aHelpfulBtn {
   width: 90px;
 }
 
-.aReportBtn {
+.qReportBtn, .aReportBtn {
   margin-left: 20px;
+}
+
+.moreAnswers, .collapseAnswers {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 300px;
+}
+
+.reportedAnswer {
+  margin: 15px;
+}
+
+.reportedQuestion {
+  margin: 15px;
 }

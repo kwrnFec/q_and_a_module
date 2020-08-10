@@ -12,10 +12,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      questions: [],
-
-      // will get real id from proxy, I think
-      product_id: 5
+      // props.questions is for testing purposes
+      questions: this.props.questions,
+      product_id: this.props.product_id
     }
 
     this.getQuestions = this.getQuestions.bind(this);
@@ -44,6 +43,17 @@ class App extends React.Component {
   }
 
   render() {
+
+    // handles undefined props.questions
+    let questions =<span></span>;
+    if (this.state.questions) {
+      questions = this.state.questions.map((question, index) => {
+        return (
+          <Question question={question} key={index} />
+        );
+      })
+    }
+
     return (
       <div className='qaApp'>
         <Accordion className='qaAppInner'>
@@ -55,11 +65,7 @@ class App extends React.Component {
             </Card.Header>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
-                {this.state.questions.map((question, index) => {
-                  return (
-                    <Question question={question} key={index} />
-                  );
-                })}
+                {questions}
               </Card.Body>
             </Accordion.Collapse>
           </Card>

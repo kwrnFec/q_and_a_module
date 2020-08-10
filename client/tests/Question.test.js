@@ -22,6 +22,18 @@ describe('Question Component', () => {
     expect(postClickHelpfulness).toEqual(preClickHelpfulness + 1);
   })
 
+  it('should not display question if report button is clicked', () => {
+    const wrapper = shallow(<Question question={testQuestion} key={0}/>);
+
+    let reportButton = wrapper.find('.qReportBtn');
+
+    expect(wrapper.find('.question').exists()).toBeTruthy();
+
+    reportButton.simulate('click');
+
+    expect(wrapper.find('.question').exists()).toBeFalsy();
+  })
+
   it('should match test snapshot', () => {
     const questionDisplay = renderer.create(<Question question={testQuestion} key={0}/>).toJSON();
     expect(questionDisplay).toMatchSnapshot();
