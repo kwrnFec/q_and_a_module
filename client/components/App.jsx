@@ -45,8 +45,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Accordion>
+      <div className='qaApp'>
+        <Accordion className='qaAppInner'>
           <Card>
             <Card.Header>
               <Accordion.Toggle as={Button} variant="link" eventKey="0">
