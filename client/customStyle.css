@@ -1,0 +1,15 @@
+/* Add custom styling below */
+
+.qaApp {
+  display: flex;
+  justify-content: center;
+}
+
+.qaAppInner {
+  width: 80vw;
+}
+
+.answerRow {
+  max-height: 50vh;
+  overflow-y: auto;
+}
