@@ -3,10 +3,9 @@
 .qaApp {
   display: flex;
   justify-content: center;
-  overflow-y: hidden;
 }
 
-.moreAnswersRow {
+.moreAnswersRow, .seeMoreQs {
   display: flex;
   justify-content: center;
 }
@@ -16,7 +15,7 @@
 }
 
 .qaDisplay {
-  max-height: 89vh;
+  max-height: 75vh;
   overflow-y: auto;
 }
 
@@ -43,7 +42,7 @@
   margin-left: 20px;
 }
 
-.moreAnswers, .collapseAnswers {
+.moreAnswers, .collapseAnswers, .moreQsButton {
   margin-top: 10px;
   margin-bottom: 5px;
   width: 300px;
@@ -55,4 +54,11 @@
 
 .reportedQuestion {
   margin: 15px;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 2vh;
 }

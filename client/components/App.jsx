@@ -6,6 +6,8 @@ import Question from './Question.jsx';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
 
 
 class App extends React.Component {
@@ -56,8 +58,8 @@ class App extends React.Component {
 
     let seeMoreQuestions = <span></span>;
     if (this.state.isMoreQuestions) {
-      seeMoreQuestions = <Button variant='primary' className='moreQsbutton'
-        onClick={() => { this.getQuestions(this.state.questions.length + 2) }} >See More Questions</Button>
+      seeMoreQuestions = <Button variant='primary' className='moreQsButton'
+        onClick={() => this.getQuestions(this.state.questions.length + 2)} >See More Questions</Button>
     }
 
     return (
@@ -70,9 +72,19 @@ class App extends React.Component {
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="0">
-              <Card.Body className='qaDisplay'>
-                {questions}
-                {seeMoreQuestions}
+              <Card.Body>
+                <div className='searchBar'>
+                  <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-success">Search</Button>
+                  </Form>
+                </div>
+                <div className='qaDisplay'>
+                  {questions}
+                  <div className='seeMoreQs'>
+                    {seeMoreQuestions}
+                  </div>
+                </div>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
