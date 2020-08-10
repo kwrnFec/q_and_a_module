@@ -24,7 +24,7 @@ class App extends React.Component {
     this.getQuestions();
   }
 
-  getQuestions(qLimit = 4, aLimit = 2) {
+  getQuestions(qLimit = 2, aLimit = 2) {
     axios.get('/questions', {
       params: {
         qLimit: qLimit,
@@ -45,13 +45,19 @@ class App extends React.Component {
   render() {
 
     // handles undefined props.questions
-    let questions =<span></span>;
+    let questions = <span></span>;
     if (this.state.questions) {
       questions = this.state.questions.map((question, index) => {
         return (
           <Question question={question} key={index} />
         );
       })
+    }
+
+    let seeMoreQuestions = <span></span>;
+    if (this.state.isMoreQuestions) {
+      seeMoreQuestions = <Button variant='primary' className='moreQsbutton'
+        onClick={() => { this.getQuestions(this.state.questions.length + 2) }} >See More Questions</Button>
     }
 
     return (
@@ -64,8 +70,9 @@ class App extends React.Component {
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="0">
-              <Card.Body>
+              <Card.Body className='qaDisplay'>
                 {questions}
+                {seeMoreQuestions}
               </Card.Body>
             </Accordion.Collapse>
           </Card>

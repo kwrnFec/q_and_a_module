@@ -1,12 +1,23 @@
 /* Add custom styling below */
 
-.qaApp, .moreAnswersRow {
+.qaApp {
+  display: flex;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+.moreAnswersRow {
   display: flex;
   justify-content: center;
 }
 
 .qaAppInner {
   width: 80vw;
+}
+
+.qaDisplay {
+  max-height: 89vh;
+  overflow-y: auto;
 }
 
 .question {
