@@ -77,6 +77,19 @@ app.put('/question/helpful', (req, res) => {
     })
 });
 
+app.put('/answer/report', (req, res) => {
+  let answer_id = req.body.answer_id;
+  let url = apiUrl + `qa/answer/${answer_id}/report`;
+
+  axios.put(url)
+    .then(() => {
+      res.send();
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+});
+
 const port = 3001;
 
 app.listen(port, () => {

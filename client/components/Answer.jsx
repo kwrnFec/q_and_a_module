@@ -12,19 +12,36 @@ class Answer extends React.Component {
     super(props);
     this.state = {
       helpfulness: this.props.answer.helpfulness,
-      helpfulClicked: false
+      helpfulClicked: false,
+      reported: false
     }
 
     this.incrementHelpful = this.incrementHelpful.bind(this);
+    this.reportAnswer = this.reportAnswer.bind(this);
   }
 
   incrementHelpful() {
     if (this.state.helpfulClicked === false) {
-      axios.put('/answer/helpful', { answer_id: this.props.answer.id });
+      // handles user made answers
+      let answer_id = this.props.answer.id;
+      if (this.props.answer.answer_id) {
+        answer_id = this.props.answer.answer_id;
+      }
+      axios.put('/answer/helpful', { answer_id });
       this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
     } else {
+      // may replace with something nicer looking later
       alert('You can only mark an answer as helpful once.');
     }
+  }
+
+  reportAnswer() {
+    let answer_id = this.props.answer.id;
+      if (this.props.answer.answer_id) {
+        answer_id = this.props.answer.answer_id;
+      }
+    axios.put('/answer/report', { answer_id });
+    this.setState({ reported: true });
   }
 
   convertDate(dateString) {
@@ -41,21 +58,28 @@ class Answer extends React.Component {
   }
 
   render() {
+    if (!this.state.reported) {
+      return (
+        <Container>
+          <Row>
+            <Col>A: {this.props.answer.body}</Col>
+          </Row>
+          <Row>
+            <Col>by {this.props.answer.answerer_name === 'Seller' ? <b>{this.props.answer.answerer_name}</b> : this.props.answer.answerer_name}, {this.convertDate(this.props.answer.date)}
+            </Col>
+          </Row>
+          <Row>
+            <Col><span>Helpful? </span>
+              <Button variant="primary" className="btn-primary aHelpfulBtn" onClick={this.incrementHelpful} >Yes ({this.state.helpfulness})</Button>
+              <Button variant="danger" className="btn-primary aReportBtn" onClick={this.reportAnswer} >Report</Button>
+            </Col>
+          </Row>
+        </Container>
+      );
+    } else {
+      return (<span></span>);
+    }
 
-    return (
-      <Container>
-        <Row>
-          <Col>A: {this.props.answer.body}</Col>
-        </Row>
-        <Row>
-          <Col>by {this.props.answer.answerer_name === 'Seller' ? <b>{this.props.answer.answerer_name}</b> : this.props.answer.answerer_name}, {this.convertDate(this.props.answer.date)}
-          </Col>
-        </Row>
-        <Row>
-          <Col>Helpful? <Button variant="primary" className="btn-primary" onClick={this.incrementHelpful} >Yes ({this.state.helpfulness})</Button></Col>
-        </Row>
-      </Container>
-    );
   }
 
 }

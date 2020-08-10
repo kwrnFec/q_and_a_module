@@ -13,3 +13,11 @@
   max-height: 50vh;
   overflow-y: auto;
 }
+
+.aHelpfulBtn {
+  width: 90px;
+}
+
+.aReportBtn {
+  margin-left: 20px;
+}

@@ -11,7 +11,7 @@ describe('Question Component', () => {
     const wrapper = shallow(<Question question={testQuestion} key={0}/>);
     let preClickHelpfulness = wrapper.state('helpfulness');
 
-    let helpfulButton = wrapper.find('.qHelpfulButton');
+    let helpfulButton = wrapper.find('.qHelpfulBtn');
 
     helpfulButton.simulate('click');
 
