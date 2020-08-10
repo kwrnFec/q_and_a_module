@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Question Component should match test snapshot 1`] = `
+<div>
+  <div
+    className="container"
+    style={
+      Object {
+        "border": "2px solid black",
+        "margin": "5px",
+      }
+    }
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-auto"
+      >
+        <h5>
+          Q: 
+          Can I wash it?
+        </h5>
+      </div>
+      <div
+        className="col"
+      />
+      <div
+        className="col-6"
+      >
+        Helpful? 
+        <button
+          className="qHelpfulButton btn btn-primary"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Yes (
+          23
+          )
+        </button>
+      </div>
+    </div>
+    <div
+      className="answerRow row"
+    >
+      <div
+        className="col"
+      >
+        <div
+          className="container"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col"
+            >
+              A: 
+              I've thrown it in the wash and it seems fine
+            </div>
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="col"
+            >
+              by 
+              skilover
+              , 
+              January 04, 2017
+            </div>
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="col"
+            >
+              Helpful? 
+              <button
+                className="btn-primary btn btn-primary"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Yes (
+                9
+                )
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="container"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col"
+            >
+              A: 
+              It says not to
+            </div>
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="col"
+            >
+              by 
+              skilover
+              , 
+              January 04, 2017
+            </div>
+          </div>
+          <div
+            className="row"
+          >
+            <div
+              className="col"
+            >
+              Helpful? 
+              <button
+                className="btn-primary btn btn-primary"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Yes (
+                5
+                )
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col"
+      />
+      <div
+        className="col-6"
+      >
+        <button
+          className="btn btn-primary"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          See More Answers
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
