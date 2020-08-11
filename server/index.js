@@ -8,38 +8,45 @@ app.use(express.static('public'));
 
 app.use(express.json());
 
-app.get('/questions', (req, res) => {
+app.get('/questions', async (req, res) => {
   let { qLimit, aLimit, product_id } = req.query;
   let url = apiUrl + 'qa/' + product_id;
-  axios.get(url)
-    .then((response) => {
-      // checks if there is more than qLimit questions
-      let isMoreQuestions = response.data.results.length > qLimit;
 
-      // limits amount of questions displayed
-      let questions = response.data.results.slice(0, qLimit);
+  let allQuestions = [];
+  let page = 0;
 
-      // limits amount of answers per question displayed
-      for (let i = 0; i < questions.length; i++) {
-        let limitedAnswers = {};
+  // loops until the response result is empty
+  // assumes that no page has more than 20 results
+  do {
+    let { data: response } = await axios.get(url, { params: { page: ++page, count: 20 } });
+    if (response.results.length === 0) break;
+    allQuestions = allQuestions.concat(response.results);
+  } while (true)
 
-        let ids = Object.keys(questions[i].answers);
-        let j = 0;
-        while (Object.keys(limitedAnswers).length < aLimit && ids.length !== 0) {
-          limitedAnswers[ids[j]] = questions[i].answers[ids[j]];
-          j++;
-        }
+  // checks if there is more than qLimit questions
+  let isMoreQuestions = allQuestions.length > qLimit;
 
-        let isMoreAnswers = aLimit < ids.length;
-        limitedAnswers.isMoreAnswers = isMoreAnswers;
+  // limits amount of questions displayed
+  let questions = allQuestions.slice(0, qLimit);
 
-        questions[i].answers = limitedAnswers;
-      }
-      res.send({ questions, isMoreQuestions });
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+  // limits amount of answers per question displayed
+  for (let i = 0; i < questions.length; i++) {
+    let limitedAnswers = {};
+
+    let ids = Object.keys(questions[i].answers);
+    let j = 0;
+    while (Object.keys(limitedAnswers).length < aLimit && ids.length !== 0) {
+      limitedAnswers[ids[j]] = questions[i].answers[ids[j]];
+      j++;
+    }
+
+    let isMoreAnswers = aLimit < ids.length;
+    limitedAnswers.isMoreAnswers = isMoreAnswers;
+
+    questions[i].answers = limitedAnswers;
+  }
+
+  res.send({ questions, isMoreQuestions });
 });
 
 app.get('/moreAnswers', (req, res) => {
@@ -98,6 +105,17 @@ app.put('/question/report', (req, res) => {
     .then(() => {
       res.send();
     })
+});
+
+app.post('/question/add', (req, res) => {
+  let { product_id, ...body } = req.body;
+  let url = apiUrl + `qa/${product_id}`;
+
+  axios.post(url, body)
+    .then((response) => {
+      res.send(response.data);
+    })
+
 });
 
 const port = 3001;

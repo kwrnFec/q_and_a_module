@@ -570,6 +570,22 @@ exports[`App Component should match test snapshot 1`] = `
               <span />
             </div>
           </div>
+          <div
+            className="submitQuestion"
+          >
+            <div
+              className="submitQButton"
+            >
+              <button
+                className="btn btn-outline-dark"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Submit Question
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

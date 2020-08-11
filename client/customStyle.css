@@ -10,7 +10,7 @@ body {
   justify-content: center;
 }
 
-.moreAnswersRow, .seeMoreQs {
+.moreAnswersRow, .seeMoreQs, .submitQButton {
   display: flex;
   justify-content: center;
 }

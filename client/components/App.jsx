@@ -2,12 +2,14 @@ import React from 'react';
 import axios from 'axios';
 
 import Question from './Question.jsx';
+import SubmitQuestion from './SubmitQuestion.jsx';
 
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
+import Modal from 'react-bootstrap/Modal';
 
 
 class App extends React.Component {
@@ -16,10 +18,14 @@ class App extends React.Component {
     this.state = {
       // props.questions is for testing purposes
       questions: this.props.questions,
-      product_id: this.props.product_id
+      product_name: this.props.product_name,
+      product_id: this.props.product_id,
+      showSubmitQuestion: false
     }
 
     this.getQuestions = this.getQuestions.bind(this);
+    this.handleOpenSubmit = this.handleOpenSubmit.bind(this);
+    this.handleCloseSubmit = this.handleCloseSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -44,8 +50,15 @@ class App extends React.Component {
       })
   }
 
-  render() {
+  handleOpenSubmit() {
+    this.setState({ showSubmitQuestion: true });
+  }
 
+  handleCloseSubmit() {
+    this.setState({ showSubmitQuestion: false });
+  }
+
+  render() {
     // handles undefined props.questions
     let questions = <span></span>;
     if (this.state.questions) {
@@ -83,12 +96,22 @@ class App extends React.Component {
                     </InputGroup.Append>
                   </InputGroup>
                 </div> */}
+
                 <div className='qaDisplay'>
                   {questions}
                   <div className='seeMoreQs'>
                     {seeMoreQuestions}
                   </div>
                 </div>
+
+                <SubmitQuestion
+                  handleOpenSubmit={this.handleOpenSubmit}
+                  handleCloseSubmit={this.handleCloseSubmit}
+                  product_name={this.state.product_name}
+                  product_id={this.state.product_id}
+                  show={this.state.showSubmitQuestion}
+                />
+
               </Card.Body>
             </Accordion.Collapse>
           </Card>
