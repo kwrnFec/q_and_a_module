@@ -73,12 +73,12 @@ class App extends React.Component {
             </Card.Header>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
-                <div className='searchBar'>
+                {/* <div className='searchBar'>
                   <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                     <Button variant="outline-success">Search</Button>
                   </Form>
-                </div>
+                </div> */}
                 <div className='qaDisplay'>
                   {questions}
                   <div className='seeMoreQs'>
