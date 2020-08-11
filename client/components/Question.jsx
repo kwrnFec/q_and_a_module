@@ -85,22 +85,22 @@ class Question extends React.Component {
 
     let moreAnswers;
     if (this.state.isMoreAnswers) {
-      moreAnswers = <Button className='moreAnswers' onClick={this.getMoreAnswers.bind(this)}>See More Answers</Button>;
+      moreAnswers = <Button variant='outline-dark' className='moreAnswers' onClick={this.getMoreAnswers.bind(this)}>See More Answers</Button>;
     } else if (answers.length <= 2) {
       moreAnswers = <span></span>;
     } else {
-      moreAnswers = <Button className='collapseAnswers' onClick={this.collapseAnswers.bind(this)}>Collapse Answers</Button>;
+      moreAnswers = <Button variant='outline-dark' className='collapseAnswers' onClick={this.collapseAnswers.bind(this)}>Collapse Answers</Button>;
     }
 
-    let helpfulButton = <Button variant="primary" className="qHelpfulBtn"
+    let helpfulButton = <Button variant="outline-dark" size="sm" className="qHelpfulBtn"
       onClick={this.incrementHelpfulQuestion} >Yes ({this.state.helpfulness})</Button>;
     if (this.state.helpfulClicked) {
-      helpfulButton = <Button variant="success" className="qHelpfulBtn btn-success">Yes ({this.state.helpfulness})</Button>;
+      helpfulButton = <Button variant="secondary" size="sm" className="qHelpfulBtn btn-secondary">Yes ({this.state.helpfulness})</Button>;
     }
 
-    let reportButton = <Button variant="danger" className="qReportBtn" onClick={this.reportQuestion} >Report</Button>;
+    let reportButton = <Button variant="outline-dark" size="sm" className="qReportBtn" onClick={this.reportQuestion} >Report</Button>;
     if (this.state.reported) {
-      reportButton = <Button variant="secondary" className="qReportBtn btn-secondary">Reported</Button>;
+      reportButton = <Button variant="secondary" size="sm" className="qReportBtn btn-secondary">Reported</Button>;
     }
 
     return (

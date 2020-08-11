@@ -39,7 +39,7 @@
 }
 
 .qHelpfulBtn, .aHelpfulBtn {
-  width: 90px;
+  width: 75px;
 }
 
 .qReportBtn, .aReportBtn {
@@ -50,14 +50,6 @@
   margin-top: 10px;
   margin-bottom: 5px;
   width: 300px;
-}
-
-.reportedAnswer {
-  margin: 15px;
-}
-
-.reportedQuestion {
-  margin: 15px;
 }
 
 .searchBar {

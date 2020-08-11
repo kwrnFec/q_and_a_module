@@ -58,8 +58,8 @@ class App extends React.Component {
 
     let seeMoreQuestions = <span></span>;
     if (this.state.isMoreQuestions) {
-      seeMoreQuestions = <Button variant='primary' className='moreQsButton'
-        onClick={() => this.getQuestions(this.state.questions.length + 2)} >See More Questions</Button>
+      seeMoreQuestions = <Button variant='outline-dark' className='moreQsButton'
+        onClick={() => this.getQuestions(this.state.questions.length + 2)} >More Answered Questions</Button>
     }
 
     return (
@@ -75,8 +75,8 @@ class App extends React.Component {
               <Card.Body>
                 {/* <div className='searchBar'>
                   <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-success">Search</Button>
+                    <FormControl type="text" placeholder="Have a question? Search for answers…" className="mr-sm-2" />
+                    <Button variant="outline-dark">Search</Button>
                   </Form>
                 </div> */}
                 <div className='qaDisplay'>
