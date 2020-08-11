@@ -1,5 +1,10 @@
 /* Add custom styling below */
 
+/* remove body styling when deploying */
+body {
+  overflow: hidden;
+}
+
 .qaApp {
   display: flex;
   justify-content: center;
@@ -55,6 +60,5 @@
 .searchBar {
   display: flex;
   justify-content: center;
-  margin-top: 0;
-  margin-bottom: 2vh;
+  margin: 0;
 }

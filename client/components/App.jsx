@@ -6,7 +6,7 @@ import Question from './Question.jsx';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 
 
@@ -74,10 +74,14 @@ class App extends React.Component {
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 {/* <div className='searchBar'>
-                  <Form inline>
-                    <FormControl type="text" placeholder="Have a question? Search for answers…" className="mr-sm-2" />
-                    <Button variant="outline-dark">Search</Button>
-                  </Form>
+                  <InputGroup className="mb-3">
+                    <FormControl type="text" className="searchInput"
+                      placeholder="Have a question? Search for answers…"
+                    />
+                    <InputGroup.Append>
+                      <Button variant="outline-dark">Search</Button>
+                    </InputGroup.Append>
+                  </InputGroup>
                 </div> */}
                 <div className='qaDisplay'>
                   {questions}
