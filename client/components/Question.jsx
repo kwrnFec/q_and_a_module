@@ -25,12 +25,8 @@ class Question extends React.Component {
   }
 
   incrementHelpfulQuestion() {
-    if (this.state.helpfulClicked === false) {
-      axios.put('/question/helpful', { question_id: this.state.question.question_id });
-      this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
-    } else {
-      alert('You can only mark an question as helpful once.');
-    }
+    axios.put('/question/helpful', { question_id: this.state.question.question_id });
+    this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
   }
 
   reportQuestion() {
@@ -89,16 +85,22 @@ class Question extends React.Component {
 
     let moreAnswers;
     if (this.state.isMoreAnswers) {
-      moreAnswers = <Button className='moreAnswers' onClick={this.getMoreAnswers.bind(this)}>See More Answers</Button>;
+      moreAnswers = <Button variant='outline-dark' className='moreAnswers' onClick={this.getMoreAnswers.bind(this)}>See More Answers</Button>;
     } else if (answers.length <= 2) {
       moreAnswers = <span></span>;
     } else {
-      moreAnswers = <Button className='collapseAnswers' onClick={this.collapseAnswers.bind(this)}>Collapse Answers</Button>;
+      moreAnswers = <Button variant='outline-dark' className='collapseAnswers' onClick={this.collapseAnswers.bind(this)}>Collapse Answers</Button>;
     }
 
-    let reportButton = <Button variant="danger" className="qReportBtn" onClick={this.reportQuestion} >Report</Button>;
+    let helpfulButton = <Button variant="outline-dark" size="sm" className="qHelpfulBtn"
+      onClick={this.incrementHelpfulQuestion} >Yes ({this.state.helpfulness})</Button>;
+    if (this.state.helpfulClicked) {
+      helpfulButton = <Button variant="secondary" size="sm" className="qHelpfulBtn btn-secondary">Yes ({this.state.helpfulness})</Button>;
+    }
+
+    let reportButton = <Button variant="outline-dark" size="sm" className="qReportBtn" onClick={this.reportQuestion} >Report</Button>;
     if (this.state.reported) {
-      reportButton = <Button variant="secondary" className="qReportBtn btn-secondary">Reported</Button>;
+      reportButton = <Button variant="secondary" size="sm" className="qReportBtn btn-secondary">Reported</Button>;
     }
 
     return (
@@ -108,9 +110,8 @@ class Question extends React.Component {
             <Col xs='auto'><h5>Q: {this.state.question.question_body}</h5></Col>
           </Row>
           <Row>
-            <Col xs={6} className='qButtonRow'>Helpful? <Button variant="primary" className="qHelpfulBtn"
-              onClick={this.incrementHelpfulQuestion} >
-              Yes ({this.state.helpfulness})</Button>
+            <Col className='qButtonRow'>
+              <span>Helpful? </span> {helpfulButton}
               {reportButton}
             </Col>
           </Row>

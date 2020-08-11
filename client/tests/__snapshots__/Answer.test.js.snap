@@ -30,13 +30,13 @@ exports[`Answer Component should match test snapshot 1`] = `
     className="row"
   >
     <div
-      className="col"
+      className="aButtonCol col"
     >
       <span>
         Helpful? 
       </span>
       <button
-        className="aHelpfulBtn btn btn-primary"
+        className="aHelpfulBtn btn btn-outline-dark btn-sm"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -46,7 +46,7 @@ exports[`Answer Component should match test snapshot 1`] = `
         )
       </button>
       <button
-        className="aReportBtn btn btn-danger"
+        className="aReportBtn btn btn-outline-dark btn-sm"
         disabled={false}
         onClick={[Function]}
         type="button"

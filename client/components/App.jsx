@@ -6,6 +6,8 @@ import Question from './Question.jsx';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
 
 
 class App extends React.Component {
@@ -24,7 +26,7 @@ class App extends React.Component {
     this.getQuestions();
   }
 
-  getQuestions(qLimit = 4, aLimit = 2) {
+  getQuestions(qLimit = 2, aLimit = 2) {
     axios.get('/questions', {
       params: {
         qLimit: qLimit,
@@ -45,13 +47,19 @@ class App extends React.Component {
   render() {
 
     // handles undefined props.questions
-    let questions =<span></span>;
+    let questions = <span></span>;
     if (this.state.questions) {
       questions = this.state.questions.map((question, index) => {
         return (
           <Question question={question} key={index} />
         );
       })
+    }
+
+    let seeMoreQuestions = <span></span>;
+    if (this.state.isMoreQuestions) {
+      seeMoreQuestions = <Button variant='outline-dark' className='moreQsButton'
+        onClick={() => this.getQuestions(this.state.questions.length + 2)} >More Answered Questions</Button>
     }
 
     return (
@@ -65,7 +73,22 @@ class App extends React.Component {
             </Card.Header>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
-                {questions}
+                {/* <div className='searchBar'>
+                  <InputGroup className="mb-3">
+                    <FormControl type="text" className="searchInput"
+                      placeholder="Have a question? Search for answers…"
+                    />
+                    <InputGroup.Append>
+                      <Button variant="outline-dark">Search</Button>
+                    </InputGroup.Append>
+                  </InputGroup>
+                </div> */}
+                <div className='qaDisplay'>
+                  {questions}
+                  <div className='seeMoreQs'>
+                    {seeMoreQuestions}
+                  </div>
+                </div>
               </Card.Body>
             </Accordion.Collapse>
           </Card>

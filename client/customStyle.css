@@ -1,12 +1,27 @@
 /* Add custom styling below */
 
-.qaApp, .moreAnswersRow {
+/* remove body styling when deploying */
+body {
+  overflow: hidden;
+}
+
+.qaApp {
+  display: flex;
+  justify-content: center;
+}
+
+.moreAnswersRow, .seeMoreQs {
   display: flex;
   justify-content: center;
 }
 
 .qaAppInner {
   width: 80vw;
+}
+
+.qaDisplay {
+  max-height: 75vh;
+  overflow-y: auto;
 }
 
 .question {
@@ -19,29 +34,31 @@
   margin-left: 5vh;
 }
 
+.aButtonCol {
+  margin-left: 3vh;
+}
+
 .answerRow {
   max-height: 50vh;
   overflow-y: auto;
 }
 
 .qHelpfulBtn, .aHelpfulBtn {
-  width: 90px;
+  width: 75px;
 }
 
 .qReportBtn, .aReportBtn {
   margin-left: 20px;
 }
 
-.moreAnswers, .collapseAnswers {
+.moreAnswers, .collapseAnswers, .moreQsButton {
   margin-top: 10px;
   margin-bottom: 5px;
   width: 300px;
 }
 
-.reportedAnswer {
-  margin: 15px;
-}
-
-.reportedQuestion {
-  margin: 15px;
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin: 0;
 }

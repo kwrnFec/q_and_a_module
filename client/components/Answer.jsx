@@ -64,14 +64,14 @@ class Answer extends React.Component {
 
   render() {
 
-    let reportButton = <Button variant="danger" className="aReportBtn" onClick={this.reportAnswer} >Report</Button>;
+    let reportButton = <Button variant="outline-dark" size="sm" className="aReportBtn" onClick={this.reportAnswer} >Report</Button>;
     if (this.state.reported) {
-      reportButton = <Button variant="secondary" className="aReportBtn btn-secondary" >Reported</Button>;
+      reportButton = <Button variant="secondary" size="sm" className="aReportBtn btn-secondary" >Reported</Button>;
     }
 
-    let helpfulButton = <Button variant="primary" className="aHelpfulBtn" onClick={this.incrementHelpful} >Yes ({this.state.helpfulness})</Button>;
+    let helpfulButton = <Button variant="outline-dark" size="sm" className="aHelpfulBtn" onClick={this.incrementHelpful} >Yes ({this.state.helpfulness})</Button>;
     if (this.state.helpfulClicked) {
-      helpfulButton = <Button variant="success" className="aHelpfulBtn" >Yes ({this.state.helpfulness})</Button>;
+      helpfulButton = <Button variant="secondary" size="sm" className="aHelpfulBtn" >Yes ({this.state.helpfulness})</Button>;
     }
 
     return (
@@ -84,7 +84,7 @@ class Answer extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col><span>Helpful? </span>
+          <Col className='aButtonCol'><span>Helpful? </span>
             {helpfulButton}
             {reportButton}
           </Col>
