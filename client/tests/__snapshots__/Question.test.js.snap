@@ -21,9 +21,12 @@ exports[`Question Component should match test snapshot 1`] = `
       className="row"
     >
       <div
-        className="qButtonRow col-6"
+        className="qButtonRow col"
       >
-        Helpful? 
+        <span>
+          Helpful? 
+        </span>
+         
         <button
           className="qHelpfulBtn btn btn-primary"
           disabled={false}
@@ -79,7 +82,7 @@ exports[`Question Component should match test snapshot 1`] = `
             className="row"
           >
             <div
-              className="col"
+              className="aButtonCol col"
             >
               <span>
                 Helpful? 
@@ -134,7 +137,7 @@ exports[`Question Component should match test snapshot 1`] = `
             className="row"
           >
             <div
-              className="col"
+              className="aButtonCol col"
             >
               <span>
                 Helpful? 

@@ -30,7 +30,7 @@ exports[`Answer Component should match test snapshot 1`] = `
     className="row"
   >
     <div
-      className="col"
+      className="aButtonCol col"
     >
       <span>
         Helpful? 
