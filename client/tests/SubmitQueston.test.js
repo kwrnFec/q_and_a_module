@@ -11,7 +11,7 @@ const product_id = 0;
 const mockHandleOpenSubmit = jest.fn();
 
 
-describe('Answer Component', () => {
+describe('SubmitQuestion Component', () => {
   it('should not close modal when input is invalid and save button is clicked', () => {
 
     const mockHandleCloseSubmit = jest.fn();

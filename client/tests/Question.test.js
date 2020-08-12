@@ -35,6 +35,19 @@ describe('Question Component', () => {
     expect(reportButton.text()).toEqual('Reported');
   })
 
+  it('should add answers to the state and dom when "See More Answers" button is clicked', async () => {
+    const wrapper = shallow(<Question question={testQuestion} key={0}/>);
+
+    let initialAnswersLength = wrapper.find('.answerCol').props().children.length;
+
+    let moreAnswersButton = wrapper.find('.moreAnswers');
+    await moreAnswersButton.simulate('click');
+
+    let newAnswersLength = wrapper.find('.answerCol').props().children.length;
+
+    expect(newAnswersLength).toBeGreaterThan(initialAnswersLength);
+  })
+
   it('should match test snapshot', () => {
     const questionDisplay = renderer.create(<Question question={testQuestion} key={0}/>).toJSON();
     expect(questionDisplay).toMatchSnapshot();

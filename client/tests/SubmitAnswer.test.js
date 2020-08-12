@@ -12,7 +12,7 @@ const question_body = 'Some test Question?';
 const mockHandleOpenSubmit = jest.fn();
 
 
-describe('Answer Component', () => {
+describe('SubmitAnswer Component', () => {
   it('should not close modal and should display alert when input is invalid and save button is clicked', () => {
 
     const mockHandleCloseSubmit = jest.fn();

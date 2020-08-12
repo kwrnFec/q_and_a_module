@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Answer Component should match snapshot when show=true 1`] = `
+exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
 <SubmitAnswer
   handleCloseSubmit={[MockFunction]}
   handleOpenSubmit={[MockFunction]}

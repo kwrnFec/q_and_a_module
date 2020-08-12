@@ -33,26 +33,20 @@ class Question extends React.Component {
 
   reportQuestion() {
     axios.put('/question/report', { question_id: this.state.question.question_id })
-      .catch((err) => {
-        // commented for tests
-        // un-comment to check errors
-        // console.log(err);
-      })
 
     this.setState({ reported: true });
   }
 
-  getMoreAnswers() {
-    axios.get('/moreAnswers', {
+  async getMoreAnswers() {
+    let response = await axios.get('/moreAnswers', {
       params: {
         question_id: this.state.question.question_id
       }
     })
-      .then((response) => {
-        let answers = response.data.answers;
-        let isMoreAnswers = response.data.isMoreAnswers;
-        this.setState({ answers, isMoreAnswers });
-      })
+
+    let answers = response.data.answers;
+    let isMoreAnswers = response.data.isMoreAnswers;
+    this.setState({ answers, isMoreAnswers });
   }
 
   collapseAnswers() {
@@ -126,7 +120,7 @@ class Question extends React.Component {
             </Col>
           </Row>
           <Row className='answerRow'>
-            <Col>
+            <Col className='answerCol'>
               {answers.map((answer, index) => {
                 return (
                   <Answer answer={answer} key={index} />

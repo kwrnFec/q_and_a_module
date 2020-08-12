@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import "regenerator-runtime/runtime.js";
 
 import Question from './Question.jsx';
 import SubmitQuestion from './SubmitQuestion.jsx';
@@ -32,22 +33,18 @@ class App extends React.Component {
     this.getQuestions();
   }
 
-  getQuestions(qLimit = 2, aLimit = 2) {
-    axios.get('/questions', {
+  async getQuestions(qLimit = 2, aLimit = 2) {
+    let response = await axios.get('/questions', {
       params: {
         qLimit: qLimit,
         aLimit: aLimit,
         product_id: this.state.product_id
       }
     })
-      .then((response) => {
-        let isMoreQuestions = response.data.isMoreQuestions;
-        let questions = response.data.questions.sort((a, b) => (a.question_helpfulness > b.question_helpfulness) ? -1 : 1);
-        this.setState({ questions, isMoreQuestions });
-      })
-      .catch((err) => {
-        // console.log(err);
-      })
+
+    let isMoreQuestions = response.data.isMoreQuestions;
+    let questions = response.data.questions.sort((a, b) => (a.question_helpfulness > b.question_helpfulness) ? -1 : 1);
+    this.setState({ questions, isMoreQuestions });
   }
 
   handleOpenSubmit() {

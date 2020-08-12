@@ -106,7 +106,7 @@ exports[`App Component should match test snapshot 1`] = `
                   className="answerRow row"
                 >
                   <div
-                    className="col"
+                    className="answerCol col"
                   >
                     <div
                       className="answer container"
@@ -310,7 +310,7 @@ exports[`App Component should match test snapshot 1`] = `
                   className="answerRow row"
                 >
                   <div
-                    className="col"
+                    className="answerCol col"
                   >
                     <div
                       className="answer container"
@@ -514,7 +514,7 @@ exports[`App Component should match test snapshot 1`] = `
                   className="answerRow row"
                 >
                   <div
-                    className="col"
+                    className="answerCol col"
                   >
                     <div
                       className="answer container"
@@ -653,7 +653,7 @@ exports[`App Component should match test snapshot 1`] = `
                   className="answerRow row"
                 >
                   <div
-                    className="col"
+                    className="answerCol col"
                   />
                 </div>
                 <div
