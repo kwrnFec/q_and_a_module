@@ -28,10 +28,7 @@ const SubmitQuestion = (props) => {
         email: emailInput
       }
 
-      axios.post('/question/add', questionSubmission)
-        .then((response) => {
-          console.log(response.data);
-        })
+      axios.post('/question/add', questionSubmission);
 
       setValidEntry(true);
       props.handleCloseSubmit();
@@ -54,12 +51,12 @@ const SubmitQuestion = (props) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {validEntry ? null : <Alert variant='danger'>You must enter the following:</Alert>}
+          {validEntry ? null : <Alert variant='danger' className='inValidAlert'>You must enter the following:</Alert>}
           <InputGroup className="mb-3">
             <InputGroup.Prepend>
               <InputGroup.Text className="inputLabel">*Your Question: </InputGroup.Text>
             </InputGroup.Prepend>
-            <FormControl as="textarea" maxLength={1000}
+            <FormControl className='qBodyInput' as="textarea" maxLength={1000}
               onChange={(event) => setQuestionInput(event.target.value)}
             />
           </InputGroup>
@@ -68,7 +65,7 @@ const SubmitQuestion = (props) => {
             <InputGroup.Prepend>
               <InputGroup.Text className="inputLabel">*What is your nickname: </InputGroup.Text>
             </InputGroup.Prepend>
-            <FormControl type='text' maxLength={60}
+            <FormControl className='qNameInput' type='text' maxLength={60}
               placeholder='Example: jackson11!'
               onChange={(event) => setNicknameInput(event.target.value)}
             />
@@ -79,7 +76,7 @@ const SubmitQuestion = (props) => {
             <InputGroup.Prepend>
               <InputGroup.Text className="inputLabel">*What is your email: </InputGroup.Text>
             </InputGroup.Prepend>
-            <FormControl type='text' maxLength={60}
+            <FormControl className='qEmailInput' type='text' maxLength={60}
               placeholder='Example: mwatney@mars.com'
               onChange={(event) => setEmailInput(event.target.value)}
             />
@@ -88,7 +85,7 @@ const SubmitQuestion = (props) => {
 
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="outline-dark" onClick={submitQuestion}>Save</Button>
+          <Button variant="outline-dark" className='saveButton' onClick={submitQuestion}>Save</Button>
         </Modal.Footer>
       </Modal>
     </div>

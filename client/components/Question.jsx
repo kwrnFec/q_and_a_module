@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import Answer from './Answer.jsx';
+import SubmitAnswer from './SubmitAnswer.jsx';
 
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -17,7 +18,8 @@ class Question extends React.Component {
       isMoreAnswers: this.props.question.answers.isMoreAnswers,
       helpfulness: this.props.question.question_helpfulness,
       helpfulClicked: false,
-      reported: false
+      reported: false,
+      showSubmitAnswer: false
     }
 
     this.incrementHelpfulQuestion = this.incrementHelpfulQuestion.bind(this);
@@ -55,6 +57,14 @@ class Question extends React.Component {
 
   collapseAnswers() {
     this.setState({ answers: this.state.answers.slice(0, 2), isMoreAnswers: true });
+  }
+
+  handleOpenSubmit() {
+    this.setState({ showSubmitAnswer: true });
+  }
+
+  handleCloseSubmit() {
+    this.setState({ showSubmitAnswer: false });
   }
 
   render() {
@@ -126,6 +136,16 @@ class Question extends React.Component {
           </Row>
           <Row className='moreAnswersRow'>
             {moreAnswers}
+          </Row>
+          <Row className='submitAnswerRow'>
+            <SubmitAnswer
+              product_name={this.props.product_name}
+              question_id={this.state.question.question_id}
+              question_body={this.state.question.question_body}
+              handleOpenSubmit={this.handleOpenSubmit.bind(this)}
+              handleCloseSubmit={this.handleCloseSubmit.bind(this)}
+              show={this.state.showSubmitAnswer}
+            />
           </Row>
         </Container>
       </div>

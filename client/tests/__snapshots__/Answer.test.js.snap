@@ -27,6 +27,24 @@ exports[`Answer Component should match test snapshot 1`] = `
     </div>
   </div>
   <div
+    className="thumbnailDiv row"
+  >
+    <div
+      className="thumbnailContainer"
+    >
+      <img
+        className="thumbnail"
+      />
+    </div>
+    <div
+      className="thumbnailContainer"
+    >
+      <img
+        className="thumbnail"
+      />
+    </div>
+  </div>
+  <div
     className="row"
   >
     <div

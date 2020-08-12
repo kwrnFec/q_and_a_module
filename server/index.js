@@ -108,14 +108,27 @@ app.put('/question/report', (req, res) => {
 });
 
 app.post('/question/add', (req, res) => {
-  let { product_id, ...body } = req.body;
+  let { product_id, ...questionSub } = req.body;
   let url = apiUrl + `qa/${product_id}`;
 
-  axios.post(url, body)
+  axios.post(url, questionSub)
     .then((response) => {
       res.send(response.data);
     })
+});
 
+app.post('/answer/add', (req, res) => {
+  let { question_id, ...answerSub } = req.body;
+  let url = apiUrl + `qa/${question_id}/answers`;
+
+  axios.post(url, answerSub)
+    .then((response) => {
+      console.log(response.data)
+      res.send();
+    })
+    .catch((err) => {
+      console.log(err);
+    })
 });
 
 const port = 3001;

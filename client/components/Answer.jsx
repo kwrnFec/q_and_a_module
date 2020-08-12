@@ -83,13 +83,22 @@ class Answer extends React.Component {
           <Col>by {this.props.answer.answerer_name === 'Seller' ? <b>{this.props.answer.answerer_name}</b> : this.props.answer.answerer_name}, {this.convertDate(this.props.answer.date)}
           </Col>
         </Row>
-        <Row>
-          <Col className='aButtonCol'><span>Helpful? </span>
-            {helpfulButton}
-            {reportButton}
-          </Col>
+        <Row className='thumbnailDiv'>
+          {this.props.answer.photos.map((photo, index) => {
+            return(
+              <div className = 'thumbnailContainer' key = { index } >
+                <img className='thumbnail' src={photo.url} />
+              </div>
+            );
+          })}
         </Row>
-      </Container>
+      <Row>
+        <Col className='aButtonCol'><span>Helpful? </span>
+          {helpfulButton}
+          {reportButton}
+        </Col>
+      </Row>
+      </Container >
     );
 
   }

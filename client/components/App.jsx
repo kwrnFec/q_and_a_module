@@ -64,7 +64,7 @@ class App extends React.Component {
     if (this.state.questions) {
       questions = this.state.questions.map((question, index) => {
         return (
-          <Question question={question} key={index} />
+          <Question product_name={this.props.product_name} question={question} key={index} />
         );
       })
     }
@@ -86,7 +86,7 @@ class App extends React.Component {
             </Card.Header>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
-                {/* <div className='searchBar'>
+                <div className='searchBar'>
                   <InputGroup className="mb-3">
                     <FormControl type="text" className="searchInput"
                       placeholder="Have a question? Search for answers…"
@@ -95,7 +95,7 @@ class App extends React.Component {
                       <Button variant="outline-dark">Search</Button>
                     </InputGroup.Append>
                   </InputGroup>
-                </div> */}
+                </div>
 
                 <div className='qaDisplay'>
                   {questions}
