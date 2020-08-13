@@ -19,6 +19,7 @@ const SubmitAnswer = (props) => {
   const [emailInput, setEmailInput] = useState('');
   const [imgUrls, setImgUrls] = useState([]);
   const [validEntry, setValidEntry] = useState(true);
+  const [invalidUrl, setInvalidUrl] = useState(false);
 
   const submitAnswer = () => {
     // isValidEmail is regex for anyString@anyString.anyString
@@ -95,8 +96,10 @@ const SubmitAnswer = (props) => {
               placeholder='Example: jack543!'
               onChange={(event) => setNicknameInput(event.target.value)}
             />
+            <div className='inputMessage'>
+              <p>For privacy reasons, do not use your full name or email address.</p>
+            </div>
           </InputGroup>
-          <p>For privacy reasons, do not use your full name or email address.</p>
 
           <InputGroup className="mb-3">
             <InputGroup.Prepend>
@@ -106,10 +109,12 @@ const SubmitAnswer = (props) => {
               placeholder='Example: jack@email.com'
               onChange={(event) => setEmailInput(event.target.value)}
             />
+            <div className='inputMessage'>
+              <p>For authentication reasons, you will not be emailed.</p>
+            </div>
           </InputGroup>
-          <p>For authentication reasons, you will not be emailed.</p>
 
-          <InputGroup className="mb-3">
+          <InputGroup className="mb-3" style={maxImagesUploaded ? { display: 'none' } : null}>
             <InputGroup.Prepend>
               <InputGroup.Text className="inputLabel">Enter an Image URL: </InputGroup.Text>
             </InputGroup.Prepend>
@@ -120,11 +125,23 @@ const SubmitAnswer = (props) => {
                   let url = event.target.value;
                   event.target.value = '';
                   setImgUrls(imgUrls.concat(url));
+                  setInvalidUrl(false);
+
+                  if (imgUrls.length >= 4) {
+                    setMaxImagesUploaded(true);
+                  }
                 }
               }}
             />
+            <div className='inputMessage'>
+              <p>Press enter/return key to add entered url.</p>
+            </div>
+
+            <Alert variant='danger'style={invalidUrl ? null : { display: 'none' }}>
+              I'm sorry, that is not a functional image url. Please try a different one.
+            </Alert>
           </InputGroup>
-          <p>Press enter/return key to add entered url.</p>
+
 
           {/* Below is for possible future feature, uploaded image files */}
           {/* <InputGroup className='mb-3 filePickerContainer'>
@@ -164,7 +181,13 @@ const SubmitAnswer = (props) => {
             {imgUrls.map((url, index) => {
               return (
                 <div className='thumbnailContainer' key={index}>
-                  <img className='thumbnail' src={url} />
+                  <img className='thumbnail' src={url}
+                    onError={(event) => {
+                      let newImgUrls = imgUrls.filter(url => !event.target.src.includes(url));
+                      setImgUrls(newImgUrls);
+                      setInvalidUrl(true);
+                    }}
+                  />
                 </div>
               );
             })}

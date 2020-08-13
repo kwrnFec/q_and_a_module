@@ -106,3 +106,11 @@ body {
 input[type="file"] {
   display: none;
 }
+
+.inputMessage {
+  display: flex;
+  justify-content: center;
+  padding-top: 2vh;
+  padding-bottom: -2vh;
+  width: 100%;
+}
