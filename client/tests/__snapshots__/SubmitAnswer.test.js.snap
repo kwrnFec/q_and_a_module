@@ -149,10 +149,14 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                             placeholder="Example: jack543!"
                             type="text"
                           />
+                          <div
+                            class="inputMessage"
+                          >
+                            <p>
+                              For privacy reasons, do not use your full name or email address.
+                            </p>
+                          </div>
                         </div>
-                        <p>
-                          For privacy reasons, do not use your full name or email address.
-                        </p>
                         <div
                           class="mb-3 input-group"
                         >
@@ -171,10 +175,14 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                             placeholder="Example: jack@email.com"
                             type="text"
                           />
+                          <div
+                            class="inputMessage"
+                          >
+                            <p>
+                              For authentication reasons, you will not be emailed.
+                            </p>
+                          </div>
                         </div>
-                        <p>
-                          For authentication reasons, you will not be emailed.
-                        </p>
                         <div
                           class="mb-3 input-group"
                         >
@@ -193,10 +201,21 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                             placeholder="Example: examplesite/example.jpg"
                             type="text"
                           />
+                          <div
+                            class="inputMessage"
+                          >
+                            <p>
+                              Press enter/return key to add entered url.
+                            </p>
+                          </div>
+                          <div
+                            class="fade alert alert-danger show"
+                            role="alert"
+                            style="display: none;"
+                          >
+                            I'm sorry, that is not a functional image url. Please try a different one.
+                          </div>
                         </div>
-                        <p>
-                          Press enter/return key to add entered url.
-                        </p>
                         <div
                           class="thumbnailDiv"
                         />
@@ -310,10 +329,14 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                                 placeholder="Example: jack543!"
                                 type="text"
                               />
+                              <div
+                                class="inputMessage"
+                              >
+                                <p>
+                                  For privacy reasons, do not use your full name or email address.
+                                </p>
+                              </div>
                             </div>
-                            <p>
-                              For privacy reasons, do not use your full name or email address.
-                            </p>
                             <div
                               class="mb-3 input-group"
                             >
@@ -332,10 +355,14 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                                 placeholder="Example: jack@email.com"
                                 type="text"
                               />
+                              <div
+                                class="inputMessage"
+                              >
+                                <p>
+                                  For authentication reasons, you will not be emailed.
+                                </p>
+                              </div>
                             </div>
-                            <p>
-                              For authentication reasons, you will not be emailed.
-                            </p>
                             <div
                               class="mb-3 input-group"
                             >
@@ -354,10 +381,21 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                                 placeholder="Example: examplesite/example.jpg"
                                 type="text"
                               />
+                              <div
+                                class="inputMessage"
+                              >
+                                <p>
+                                  Press enter/return key to add entered url.
+                                </p>
+                              </div>
+                              <div
+                                class="fade alert alert-danger show"
+                                role="alert"
+                                style="display: none;"
+                              >
+                                I'm sorry, that is not a functional image url. Please try a different one.
+                              </div>
                             </div>
-                            <p>
-                              Press enter/return key to add entered url.
-                            </p>
                             <div
                               class="thumbnailDiv"
                             />
@@ -479,10 +517,14 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                             placeholder="Example: jack543!"
                             type="text"
                           />
+                          <div
+                            class="inputMessage"
+                          >
+                            <p>
+                              For privacy reasons, do not use your full name or email address.
+                            </p>
+                          </div>
                         </div>
-                        <p>
-                          For privacy reasons, do not use your full name or email address.
-                        </p>
                         <div
                           class="mb-3 input-group"
                         >
@@ -501,10 +543,14 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                             placeholder="Example: jack@email.com"
                             type="text"
                           />
+                          <div
+                            class="inputMessage"
+                          >
+                            <p>
+                              For authentication reasons, you will not be emailed.
+                            </p>
+                          </div>
                         </div>
-                        <p>
-                          For authentication reasons, you will not be emailed.
-                        </p>
                         <div
                           class="mb-3 input-group"
                         >
@@ -523,10 +569,21 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                             placeholder="Example: examplesite/example.jpg"
                             type="text"
                           />
+                          <div
+                            class="inputMessage"
+                          >
+                            <p>
+                              Press enter/return key to add entered url.
+                            </p>
+                          </div>
+                          <div
+                            class="fade alert alert-danger show"
+                            role="alert"
+                            style="display: none;"
+                          >
+                            I'm sorry, that is not a functional image url. Please try a different one.
+                          </div>
                         </div>
-                        <p>
-                          Press enter/return key to add entered url.
-                        </p>
                         <div
                           class="thumbnailDiv"
                         />
@@ -657,10 +714,14 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                           placeholder="Example: jack543!"
                           type="text"
                         />
+                        <div
+                          class="inputMessage"
+                        >
+                          <p>
+                            For privacy reasons, do not use your full name or email address.
+                          </p>
+                        </div>
                       </div>
-                      <p>
-                        For privacy reasons, do not use your full name or email address.
-                      </p>
                       <div
                         class="mb-3 input-group"
                       >
@@ -679,10 +740,14 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                           placeholder="Example: jack@email.com"
                           type="text"
                         />
+                        <div
+                          class="inputMessage"
+                        >
+                          <p>
+                            For authentication reasons, you will not be emailed.
+                          </p>
+                        </div>
                       </div>
-                      <p>
-                        For authentication reasons, you will not be emailed.
-                      </p>
                       <div
                         class="mb-3 input-group"
                       >
@@ -701,10 +766,21 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                           placeholder="Example: examplesite/example.jpg"
                           type="text"
                         />
+                        <div
+                          class="inputMessage"
+                        >
+                          <p>
+                            Press enter/return key to add entered url.
+                          </p>
+                        </div>
+                        <div
+                          class="fade alert alert-danger show"
+                          role="alert"
+                          style="display: none;"
+                        >
+                          I'm sorry, that is not a functional image url. Please try a different one.
+                        </div>
                       </div>
-                      <p>
-                        Press enter/return key to add entered url.
-                      </p>
                       <div
                         class="thumbnailDiv"
                       />
@@ -944,11 +1020,15 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                                     type="text"
                                   />
                                 </FormControl>
+                                <div
+                                  className="inputMessage"
+                                >
+                                  <p>
+                                    For privacy reasons, do not use your full name or email address.
+                                  </p>
+                                </div>
                               </div>
                             </InputGroup>
-                            <p>
-                              For privacy reasons, do not use your full name or email address.
-                            </p>
                             <InputGroup
                               className="mb-3"
                             >
@@ -985,16 +1065,22 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                                     type="text"
                                   />
                                 </FormControl>
+                                <div
+                                  className="inputMessage"
+                                >
+                                  <p>
+                                    For authentication reasons, you will not be emailed.
+                                  </p>
+                                </div>
                               </div>
                             </InputGroup>
-                            <p>
-                              For authentication reasons, you will not be emailed.
-                            </p>
                             <InputGroup
                               className="mb-3"
+                              style={null}
                             >
                               <div
                                 className="mb-3 input-group"
+                                style={null}
                               >
                                 <InputGroupPrepend>
                                   <div
@@ -1026,11 +1112,86 @@ exports[`SubmitAnswer Component should match snapshot when show=true 1`] = `
                                     type="text"
                                   />
                                 </FormControl>
+                                <div
+                                  className="inputMessage"
+                                >
+                                  <p>
+                                    Press enter/return key to add entered url.
+                                  </p>
+                                </div>
+                                <Alert
+                                  closeLabel="Close alert"
+                                  show={true}
+                                  style={
+                                    Object {
+                                      "display": "none",
+                                    }
+                                  }
+                                  transition={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "defaultProps": Object {
+                                        "appear": false,
+                                        "in": false,
+                                        "mountOnEnter": false,
+                                        "timeout": 300,
+                                        "unmountOnExit": false,
+                                      },
+                                      "displayName": "Fade",
+                                      "render": [Function],
+                                    }
+                                  }
+                                  variant="danger"
+                                >
+                                  <Fade
+                                    appear={false}
+                                    in={true}
+                                    mountOnEnter={false}
+                                    style={
+                                      Object {
+                                        "display": "none",
+                                      }
+                                    }
+                                    timeout={300}
+                                    unmountOnExit={true}
+                                  >
+                                    <Transition
+                                      addEndListener={[Function]}
+                                      appear={false}
+                                      enter={true}
+                                      exit={true}
+                                      in={true}
+                                      mountOnEnter={false}
+                                      onEnter={[Function]}
+                                      onEntered={[Function]}
+                                      onEntering={[Function]}
+                                      onExit={[Function]}
+                                      onExited={[Function]}
+                                      onExiting={[Function]}
+                                      style={
+                                        Object {
+                                          "display": "none",
+                                        }
+                                      }
+                                      timeout={300}
+                                      unmountOnExit={true}
+                                    >
+                                      <div
+                                        className="fade alert alert-danger show"
+                                        role="alert"
+                                        style={
+                                          Object {
+                                            "display": "none",
+                                          }
+                                        }
+                                      >
+                                        I'm sorry, that is not a functional image url. Please try a different one.
+                                      </div>
+                                    </Transition>
+                                  </Fade>
+                                </Alert>
                               </div>
                             </InputGroup>
-                            <p>
-                              Press enter/return key to add entered url.
-                            </p>
                             <div
                               className="thumbnailDiv"
                             />
