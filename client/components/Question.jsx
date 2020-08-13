@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import _ from 'lodash';
 
 import Answer from './Answer.jsx';
 import SubmitAnswer from './SubmitAnswer.jsx';
@@ -26,6 +27,20 @@ class Question extends React.Component {
     this.reportQuestion = this.reportQuestion.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    if (!_.isEqual(this.props, prevProps)) {
+      this.setState({
+        question: this.props.question,
+        answers: this.props.question.answers,
+        isMoreAnswers: this.props.question.answers.isMoreAnswers,
+        helpfulness: this.props.question.question_helpfulness,
+        helpfulClicked: false,
+        reported: false,
+        showSubmitAnswer: false
+      });
+    }
+  }
+
   incrementHelpfulQuestion() {
     axios.put('/question/helpful', { question_id: this.state.question.question_id });
     this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
@@ -48,14 +63,18 @@ class Question extends React.Component {
     let isMoreAnswers = response.data.isMoreAnswers;
 
     let answersObj = answers.reduce((obj, answer) => {
-      obj[answer.answer_id] = answer;
+      if (answer.id) {
+        obj[answer.id] = answer;
+      } else {
+        obj[answer.answer_id] = answer;
+      }
+
       return obj;
     }, {})
 
     answersObj.isMoreAnswers = isMoreAnswers;
 
     this.props.changeAnswers(this.state.question.question_id, answersObj);
-    this.setState({ answers: answersObj, isMoreAnswers: isMoreAnswers });
   }
 
   collapseAnswers() {
@@ -70,7 +89,9 @@ class Question extends React.Component {
       }
     }
 
-    this.setState({ answers: shortAnswers, isMoreAnswers: true });
+    shortAnswers.isMoreAnswers = true;
+
+    this.props.changeAnswers(this.state.question.question_id, shortAnswers);
   }
 
   handleOpenSubmit() {

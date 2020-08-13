@@ -73,7 +73,6 @@ class App extends React.Component {
   }
 
   render() {
-
     // handles undefined props.questions
     let displayQuestions = <span></span>;
     if (this.state.questions) {
