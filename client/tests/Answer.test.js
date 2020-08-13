@@ -3,7 +3,7 @@ import Answer from '../components/Answer.jsx';
 import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 
-// Test Data for Question
+// Test Data for Answer
 const testAnswer = {"id":10,"body":"I've thrown it in the wash and it seems fine","date":"2017-01-04T00:00:00.000Z","answerer_name":"skilover","helpfulness":9,"photos":["https://images.unsplash.com/photo-1510551310160-589462daf284?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80","https://images.unsplash.com/photo-1469504512102-900f29606341?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"]};
 
 describe('Answer Component', () => {

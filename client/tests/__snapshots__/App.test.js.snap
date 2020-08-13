@@ -30,6 +30,30 @@ exports[`App Component should match test snapshot 1`] = `
           className="card-body"
         >
           <div
+            className="searchBar"
+          >
+            <div
+              className="mb-3 input-group"
+            >
+              <input
+                className="searchInput form-control"
+                placeholder="Have a question? Search for answers…"
+                type="text"
+              />
+              <div
+                className="input-group-append"
+              >
+                <button
+                  className="btn btn-outline-dark"
+                  disabled={false}
+                  type="button"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
             className="qaDisplay"
           >
             <div>
@@ -82,7 +106,7 @@ exports[`App Component should match test snapshot 1`] = `
                   className="answerRow row"
                 >
                   <div
-                    className="col"
+                    className="answerCol col"
                   >
                     <div
                       className="answer container"
@@ -109,6 +133,9 @@ exports[`App Component should match test snapshot 1`] = `
                           November 04, 2017
                         </div>
                       </div>
+                      <div
+                        className="thumbnailDiv row"
+                      />
                       <div
                         className="row"
                       >
@@ -165,6 +192,9 @@ exports[`App Component should match test snapshot 1`] = `
                         </div>
                       </div>
                       <div
+                        className="thumbnailDiv row"
+                      />
+                      <div
                         className="row"
                       >
                         <div
@@ -207,6 +237,26 @@ exports[`App Component should match test snapshot 1`] = `
                   >
                     See More Answers
                   </button>
+                </div>
+                <div
+                  className="submitAnswerRow row"
+                >
+                  <div
+                    className="submitAnswer"
+                  >
+                    <div
+                      className="submitAButton"
+                    >
+                      <button
+                        className="btn btn-outline-dark"
+                        disabled={false}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Submit Answer
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -260,7 +310,7 @@ exports[`App Component should match test snapshot 1`] = `
                   className="answerRow row"
                 >
                   <div
-                    className="col"
+                    className="answerCol col"
                   >
                     <div
                       className="answer container"
@@ -287,6 +337,9 @@ exports[`App Component should match test snapshot 1`] = `
                           November 28, 2019
                         </div>
                       </div>
+                      <div
+                        className="thumbnailDiv row"
+                      />
                       <div
                         className="row"
                       >
@@ -343,6 +396,9 @@ exports[`App Component should match test snapshot 1`] = `
                         </div>
                       </div>
                       <div
+                        className="thumbnailDiv row"
+                      />
+                      <div
                         className="row"
                       >
                         <div
@@ -385,6 +441,26 @@ exports[`App Component should match test snapshot 1`] = `
                   >
                     See More Answers
                   </button>
+                </div>
+                <div
+                  className="submitAnswerRow row"
+                >
+                  <div
+                    className="submitAnswer"
+                  >
+                    <div
+                      className="submitAButton"
+                    >
+                      <button
+                        className="btn btn-outline-dark"
+                        disabled={false}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Submit Answer
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -438,7 +514,7 @@ exports[`App Component should match test snapshot 1`] = `
                   className="answerRow row"
                 >
                   <div
-                    className="col"
+                    className="answerCol col"
                   >
                     <div
                       className="answer container"
@@ -465,6 +541,9 @@ exports[`App Component should match test snapshot 1`] = `
                           August 06, 2018
                         </div>
                       </div>
+                      <div
+                        className="thumbnailDiv row"
+                      />
                       <div
                         className="row"
                       >
@@ -501,6 +580,26 @@ exports[`App Component should match test snapshot 1`] = `
                   className="moreAnswersRow row"
                 >
                   <span />
+                </div>
+                <div
+                  className="submitAnswerRow row"
+                >
+                  <div
+                    className="submitAnswer"
+                  >
+                    <div
+                      className="submitAButton"
+                    >
+                      <button
+                        className="btn btn-outline-dark"
+                        disabled={false}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Submit Answer
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -554,7 +653,7 @@ exports[`App Component should match test snapshot 1`] = `
                   className="answerRow row"
                 >
                   <div
-                    className="col"
+                    className="answerCol col"
                   />
                 </div>
                 <div
@@ -562,12 +661,48 @@ exports[`App Component should match test snapshot 1`] = `
                 >
                   <span />
                 </div>
+                <div
+                  className="submitAnswerRow row"
+                >
+                  <div
+                    className="submitAnswer"
+                  >
+                    <div
+                      className="submitAButton"
+                    >
+                      <button
+                        className="btn btn-outline-dark"
+                        disabled={false}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Submit Answer
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div
               className="seeMoreQs"
             >
               <span />
+            </div>
+          </div>
+          <div
+            className="submitQuestion"
+          >
+            <div
+              className="submitQButton"
+            >
+              <button
+                className="btn btn-outline-dark"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Submit Question
+              </button>
             </div>
           </div>
         </div>

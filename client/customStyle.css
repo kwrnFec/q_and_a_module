@@ -10,7 +10,7 @@ body {
   justify-content: center;
 }
 
-.moreAnswersRow, .seeMoreQs {
+.moreAnswersRow, .seeMoreQs, .submitQButton {
   display: flex;
   justify-content: center;
 }
@@ -20,7 +20,7 @@ body {
 }
 
 .qaDisplay {
-  max-height: 75vh;
+  max-height: 69vh;
   overflow-y: auto;
 }
 
@@ -61,4 +61,56 @@ body {
   display: flex;
   justify-content: center;
   margin: 0;
+}
+
+.thumbnailDiv {
+  display: flex;
+  max-height: 20vh;
+  overflow-y: hidden;
+}
+
+.thumbnailContainer {
+  width: 18%;
+  margin: 0 auto;
+}
+
+.thumbnail {
+  border: 1px solid rgb(175, 175, 175);
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+  height: auto;
+}
+
+.submitAnswerRow {
+  display: flex;
+  justify-content: center;
+}
+
+.filePickerContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.filePickerButton {
+  padding: 7px;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.filePickerButton:hover {
+  color: white;
+  background-color: black;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.inputMessage {
+  display: flex;
+  justify-content: center;
+  padding-top: 2vh;
+  padding-bottom: -2vh;
+  width: 100%;
 }
