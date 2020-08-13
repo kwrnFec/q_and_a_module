@@ -46,11 +46,31 @@ class Question extends React.Component {
 
     let answers = response.data.answers;
     let isMoreAnswers = response.data.isMoreAnswers;
-    this.setState({ answers, isMoreAnswers });
+
+    let answersObj = answers.reduce((obj, answer) => {
+      obj[answer.answer_id] = answer;
+      return obj;
+    }, {})
+
+    answersObj.isMoreAnswers = isMoreAnswers;
+
+    this.props.changeAnswers(this.state.question.question_id, answersObj);
+    this.setState({ answers: answersObj, isMoreAnswers: isMoreAnswers });
   }
 
   collapseAnswers() {
-    this.setState({ answers: this.state.answers.slice(0, 2), isMoreAnswers: true });
+    let answersObj = this.state.answers;
+    let shortAnswers = {};
+    for (let id in answersObj) {
+      if (id !== 'isMoreAnswers') {
+        shortAnswers[id] = answersObj[id];
+        if (Object.keys(shortAnswers).length === 2) {
+          break;
+        }
+      }
+    }
+
+    this.setState({ answers: shortAnswers, isMoreAnswers: true });
   }
 
   handleOpenSubmit() {
@@ -63,16 +83,11 @@ class Question extends React.Component {
 
   render() {
 
-    let answers;
-    if (Array.isArray(this.state.answers)) {
-      answers = this.state.answers;
-    } else {
-      let answersObj = this.state.answers;
-      answers = [];
-      for (let id in answersObj) {
-        if (id !== 'isMoreAnswers') {
-          answers.push(answersObj[id]);
-        }
+    let answersObj = this.state.answers;
+    let answers = [];
+    for (let id in answersObj) {
+      if (id !== 'isMoreAnswers') {
+        answers.push(answersObj[id]);
       }
     }
 
@@ -108,7 +123,7 @@ class Question extends React.Component {
     }
 
     return (
-      <div>
+      <div ref='questionDiv'>
         <Container className='question'>
           <Row>
             <Col xs='auto'><h5>Q: {this.state.question.question_body}</h5></Col>
