@@ -36,7 +36,7 @@ describe('Question Component', () => {
   })
 
   it('should add answers to the state and dom when "See More Answers" button is clicked', async () => {
-    const wrapper = shallow(<Question question={testQuestion} key={0}/>);
+    const wrapper = shallow(<Question question={testQuestion} changeAnswers={()=>{}} key={0}/>);
 
     let initialAnswersLength = wrapper.find('.answerCol').props().children.length;
 
