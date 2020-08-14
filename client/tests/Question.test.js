@@ -35,6 +35,18 @@ describe('Question Component', () => {
     expect(reportButton.text()).toEqual('Reported');
   })
 
+  it('should send answers to App via changeAnswers when "See More Answers" button is clicked', async () => {
+    const mockChangeAnswers = jest.fn();
+
+    const wrapper = shallow(<Question question={testQuestion} changeAnswers={mockChangeAnswers} key={0}/>);
+
+    let moreAnswersButton = wrapper.find('.moreAnswers');
+    await moreAnswersButton.simulate('click');
+
+    expect(mockChangeAnswers.mock.calls[0][0]).toEqual(34);
+    expect(mockChangeAnswers.mock.calls[0][1]).not.toEqual(testQuestion.answers);
+  })
+
   it('should match test snapshot', () => {
     const questionDisplay = renderer.create(<Question question={testQuestion} key={0}/>).toJSON();
     expect(questionDisplay).toMatchSnapshot();
