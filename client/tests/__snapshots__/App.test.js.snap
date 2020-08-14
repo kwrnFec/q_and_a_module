@@ -37,20 +37,10 @@ exports[`App Component should match test snapshot 1`] = `
             >
               <input
                 className="searchInput form-control"
+                onChange={[Function]}
                 placeholder="Have a question? Search for answers…"
                 type="text"
               />
-              <div
-                className="input-group-append"
-              >
-                <button
-                  className="btn btn-outline-dark"
-                  disabled={false}
-                  type="button"
-                >
-                  Search
-                </button>
-              </div>
             </div>
           </div>
           <div

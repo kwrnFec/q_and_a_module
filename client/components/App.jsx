@@ -2,15 +2,16 @@ import React from 'react';
 import axios from 'axios';
 import "regenerator-runtime/runtime.js";
 
+
 import Question from './Question.jsx';
 import SubmitQuestion from './SubmitQuestion.jsx';
+import Search from './Search.jsx';
 
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
-import Modal from 'react-bootstrap/Modal';
 
 
 class App extends React.Component {
@@ -21,12 +22,15 @@ class App extends React.Component {
       questions: this.props.questions,
       product_name: this.props.product_name,
       product_id: this.props.product_id,
-      showSubmitQuestion: false
+      showSubmitQuestion: false,
+      filterDisplay: false,
+      filteredQuestions: []
     }
 
     this.getQuestions = this.getQuestions.bind(this);
     this.handleOpenSubmit = this.handleOpenSubmit.bind(this);
     this.handleCloseSubmit = this.handleCloseSubmit.bind(this);
+    this.changeAnswers = this.changeAnswers.bind(this);
   }
 
   componentDidMount() {
@@ -47,6 +51,19 @@ class App extends React.Component {
     this.setState({ questions, isMoreQuestions });
   }
 
+  changeAnswers(question_id, newAnswers) {
+    // makes deep copy of questions
+    let questions = JSON.parse(JSON.stringify(this.state.questions));
+
+    for (let i = 0; i < questions.length; i++) {
+      if (questions[i].question_id === question_id) {
+        questions[i].answers = newAnswers;
+      }
+    }
+
+    this.setState({ questions });
+  }
+
   handleOpenSubmit() {
     this.setState({ showSubmitQuestion: true });
   }
@@ -57,11 +74,19 @@ class App extends React.Component {
 
   render() {
     // handles undefined props.questions
-    let questions = <span></span>;
+    let displayQuestions = <span></span>;
     if (this.state.questions) {
-      questions = this.state.questions.map((question, index) => {
+      let questions = this.state.questions;
+      if (this.state.filterDisplay) {
+        questions = this.state.filteredQuestions;
+      }
+
+      displayQuestions = questions.map((question, index) => {
         return (
-          <Question product_name={this.props.product_name} question={question} key={index} />
+          <Question product_name={this.props.product_name}
+            changeAnswers={this.changeAnswers}
+            question={question} key={index}
+          />
         );
       })
     }
@@ -83,19 +108,14 @@ class App extends React.Component {
             </Card.Header>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
-                <div className='searchBar'>
-                  <InputGroup className="mb-3">
-                    <FormControl type="text" className="searchInput"
-                      placeholder="Have a question? Search for answers…"
-                    />
-                    <InputGroup.Append>
-                      <Button variant="outline-dark">Search</Button>
-                    </InputGroup.Append>
-                  </InputGroup>
-                </div>
+                <Search
+                  questions={this.state.questions}
+                  setFilterState={(bool) => this.setState({ filterDisplay: bool })}
+                  setFilteredQuestions={(fQs) => this.setState({ filteredQuestions: fQs })}
+                />
 
                 <div className='qaDisplay'>
-                  {questions}
+                  {displayQuestions}
                   <div className='seeMoreQs'>
                     {seeMoreQuestions}
                   </div>

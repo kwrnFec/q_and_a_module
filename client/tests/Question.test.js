@@ -35,17 +35,16 @@ describe('Question Component', () => {
     expect(reportButton.text()).toEqual('Reported');
   })
 
-  it('should add answers to the state and dom when "See More Answers" button is clicked', async () => {
-    const wrapper = shallow(<Question question={testQuestion} key={0}/>);
+  it('should send answers to App via changeAnswers when "See More Answers" button is clicked', async () => {
+    const mockChangeAnswers = jest.fn();
 
-    let initialAnswersLength = wrapper.find('.answerCol').props().children.length;
+    const wrapper = shallow(<Question question={testQuestion} changeAnswers={mockChangeAnswers} key={0}/>);
 
     let moreAnswersButton = wrapper.find('.moreAnswers');
     await moreAnswersButton.simulate('click');
 
-    let newAnswersLength = wrapper.find('.answerCol').props().children.length;
-
-    expect(newAnswersLength).toBeGreaterThan(initialAnswersLength);
+    expect(mockChangeAnswers.mock.calls[0][0]).toEqual(34);
+    expect(mockChangeAnswers.mock.calls[0][1]).not.toEqual(testQuestion.answers);
   })
 
   it('should match test snapshot', () => {
