@@ -11,16 +11,21 @@ exports[`App Component should match test snapshot 1`] = `
       className="card"
     >
       <div
-        className="card-header"
+        className="accHeader card-header"
+        onClick={[Function]}
       >
-        <button
-          className="btn btn-link"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
+        Questions and Answers
+        <svg
+          fill="currentColor"
+          height="20px"
+          viewBox="0 0 1792 1792"
+          width="20px"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          Questions and Answers
-        </button>
+          <path
+            d="M1683 808l-742 741q-19 19-45 19t-45-19l-742-741q-19-19-19-45.5t19-45.5l166-165q19-19 45-19t45 19l531 531 531-531q19-19 45-19t45 19l166 165q19 19 19 45.5t-19 45.5z"
+          />
+        </svg>
       </div>
       <div
         aria-expanded={null}
@@ -46,7 +51,9 @@ exports[`App Component should match test snapshot 1`] = `
           <div
             className="qaDisplay"
           >
-            <div>
+            <div
+              className="questionDiv"
+            >
               <div
                 className="question container"
               >
@@ -99,118 +106,122 @@ exports[`App Component should match test snapshot 1`] = `
                     className="answerCol col"
                   >
                     <div
-                      className="answer container"
+                      className="answerContainer"
                     >
                       <div
-                        className="row"
+                        className="answer container"
                       >
                         <div
-                          className="col"
+                          className="row"
                         >
-                          A: 
-                          I wouldn't machine wash it
-                        </div>
-                      </div>
-                      <div
-                        className="row"
-                      >
-                        <div
-                          className="col"
-                        >
-                          by 
-                          skilover
-                          , 
-                          November 04, 2017
-                        </div>
-                      </div>
-                      <div
-                        className="thumbnailDiv row"
-                      />
-                      <div
-                        className="row"
-                      >
-                        <div
-                          className="aButtonCol col"
-                        >
-                          <span>
-                            Helpful? 
-                          </span>
-                          <button
-                            className="aHelpfulBtn btn btn-outline-dark btn-sm"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
+                          <div
+                            className="answerBody col"
                           >
-                            Yes (
-                            6
-                            )
-                          </button>
-                          <button
-                            className="aReportBtn btn btn-outline-dark btn-sm"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
+                            A: 
+                            I wouldn't machine wash it
+                          </div>
+                        </div>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="col"
                           >
-                            Report
-                          </button>
+                            by 
+                            skilover
+                            , 
+                            November 04, 2017
+                          </div>
+                        </div>
+                        <div
+                          className="thumbnailDiv row"
+                        />
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="aButtonCol col"
+                          >
+                            <span>
+                              Helpful? 
+                            </span>
+                            <button
+                              className="aHelpfulBtn btn btn-outline-dark btn-sm"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              Yes (
+                              6
+                              )
+                            </button>
+                            <button
+                              className="aReportBtn btn btn-outline-dark btn-sm"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              Report
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div
-                      className="answer container"
-                    >
                       <div
-                        className="row"
+                        className="answer container"
                       >
                         <div
-                          className="col"
+                          className="row"
                         >
-                          A: 
-                          Only if you want to ruin it!
-                        </div>
-                      </div>
-                      <div
-                        className="row"
-                      >
-                        <div
-                          className="col"
-                        >
-                          by 
-                          skilover
-                          , 
-                          November 04, 2017
-                        </div>
-                      </div>
-                      <div
-                        className="thumbnailDiv row"
-                      />
-                      <div
-                        className="row"
-                      >
-                        <div
-                          className="aButtonCol col"
-                        >
-                          <span>
-                            Helpful? 
-                          </span>
-                          <button
-                            className="aHelpfulBtn btn btn-outline-dark btn-sm"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
+                          <div
+                            className="answerBody col"
                           >
-                            Yes (
-                            5
-                            )
-                          </button>
-                          <button
-                            className="aReportBtn btn btn-outline-dark btn-sm"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
+                            A: 
+                            Only if you want to ruin it!
+                          </div>
+                        </div>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="col"
                           >
-                            Report
-                          </button>
+                            by 
+                            skilover
+                            , 
+                            November 04, 2017
+                          </div>
+                        </div>
+                        <div
+                          className="thumbnailDiv row"
+                        />
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="aButtonCol col"
+                          >
+                            <span>
+                              Helpful? 
+                            </span>
+                            <button
+                              className="aHelpfulBtn btn btn-outline-dark btn-sm"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              Yes (
+                              5
+                              )
+                            </button>
+                            <button
+                              className="aReportBtn btn btn-outline-dark btn-sm"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              Report
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -250,7 +261,9 @@ exports[`App Component should match test snapshot 1`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              className="questionDiv"
+            >
               <div
                 className="question container"
               >
@@ -303,118 +316,122 @@ exports[`App Component should match test snapshot 1`] = `
                     className="answerCol col"
                   >
                     <div
-                      className="answer container"
+                      className="answerContainer"
                     >
                       <div
-                        className="row"
+                        className="answer container"
                       >
                         <div
-                          className="col"
+                          className="row"
                         >
-                          A: 
-                          Some of the seams started splitting the first time I wore it!
-                        </div>
-                      </div>
-                      <div
-                        className="row"
-                      >
-                        <div
-                          className="col"
-                        >
-                          by 
-                          sillyguy
-                          , 
-                          November 28, 2019
-                        </div>
-                      </div>
-                      <div
-                        className="thumbnailDiv row"
-                      />
-                      <div
-                        className="row"
-                      >
-                        <div
-                          className="aButtonCol col"
-                        >
-                          <span>
-                            Helpful? 
-                          </span>
-                          <button
-                            className="aHelpfulBtn btn btn-outline-dark btn-sm"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
+                          <div
+                            className="answerBody col"
                           >
-                            Yes (
-                            6
-                            )
-                          </button>
-                          <button
-                            className="aReportBtn btn btn-outline-dark btn-sm"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
+                            A: 
+                            Some of the seams started splitting the first time I wore it!
+                          </div>
+                        </div>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="col"
                           >
-                            Report
-                          </button>
+                            by 
+                            sillyguy
+                            , 
+                            November 28, 2019
+                          </div>
+                        </div>
+                        <div
+                          className="thumbnailDiv row"
+                        />
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="aButtonCol col"
+                          >
+                            <span>
+                              Helpful? 
+                            </span>
+                            <button
+                              className="aHelpfulBtn btn btn-outline-dark btn-sm"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              Yes (
+                              6
+                              )
+                            </button>
+                            <button
+                              className="aReportBtn btn btn-outline-dark btn-sm"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              Report
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div
-                      className="answer container"
-                    >
                       <div
-                        className="row"
+                        className="answer container"
                       >
                         <div
-                          className="col"
+                          className="row"
                         >
-                          A: 
-                          Super Long Time
-                        </div>
-                      </div>
-                      <div
-                        className="row"
-                      >
-                        <div
-                          className="col"
-                        >
-                          by 
-                          JJ
-                          , 
-                          June 30, 2020
-                        </div>
-                      </div>
-                      <div
-                        className="thumbnailDiv row"
-                      />
-                      <div
-                        className="row"
-                      >
-                        <div
-                          className="aButtonCol col"
-                        >
-                          <span>
-                            Helpful? 
-                          </span>
-                          <button
-                            className="aHelpfulBtn btn btn-outline-dark btn-sm"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
+                          <div
+                            className="answerBody col"
                           >
-                            Yes (
-                            0
-                            )
-                          </button>
-                          <button
-                            className="aReportBtn btn btn-outline-dark btn-sm"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
+                            A: 
+                            Super Long Time
+                          </div>
+                        </div>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="col"
                           >
-                            Report
-                          </button>
+                            by 
+                            JJ
+                            , 
+                            June 30, 2020
+                          </div>
+                        </div>
+                        <div
+                          className="thumbnailDiv row"
+                        />
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="aButtonCol col"
+                          >
+                            <span>
+                              Helpful? 
+                            </span>
+                            <button
+                              className="aHelpfulBtn btn btn-outline-dark btn-sm"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              Yes (
+                              0
+                              )
+                            </button>
+                            <button
+                              className="aReportBtn btn btn-outline-dark btn-sm"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              Report
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -454,7 +471,9 @@ exports[`App Component should match test snapshot 1`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              className="questionDiv"
+            >
               <div
                 className="question container"
               >
@@ -507,60 +526,64 @@ exports[`App Component should match test snapshot 1`] = `
                     className="answerCol col"
                   >
                     <div
-                      className="answer container"
+                      className="answerContainer"
                     >
                       <div
-                        className="row"
+                        className="answer container"
                       >
                         <div
-                          className="col"
+                          className="row"
                         >
-                          A: 
-                          Canada
-                        </div>
-                      </div>
-                      <div
-                        className="row"
-                      >
-                        <div
-                          className="col"
-                        >
-                          by 
-                          footballfan
-                          , 
-                          August 06, 2018
-                        </div>
-                      </div>
-                      <div
-                        className="thumbnailDiv row"
-                      />
-                      <div
-                        className="row"
-                      >
-                        <div
-                          className="aButtonCol col"
-                        >
-                          <span>
-                            Helpful? 
-                          </span>
-                          <button
-                            className="aHelpfulBtn btn btn-outline-dark btn-sm"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
+                          <div
+                            className="answerBody col"
                           >
-                            Yes (
-                            9
-                            )
-                          </button>
-                          <button
-                            className="aReportBtn btn btn-outline-dark btn-sm"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
+                            A: 
+                            Canada
+                          </div>
+                        </div>
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="col"
                           >
-                            Report
-                          </button>
+                            by 
+                            footballfan
+                            , 
+                            August 06, 2018
+                          </div>
+                        </div>
+                        <div
+                          className="thumbnailDiv row"
+                        />
+                        <div
+                          className="row"
+                        >
+                          <div
+                            className="aButtonCol col"
+                          >
+                            <span>
+                              Helpful? 
+                            </span>
+                            <button
+                              className="aHelpfulBtn btn btn-outline-dark btn-sm"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              Yes (
+                              9
+                              )
+                            </button>
+                            <button
+                              className="aReportBtn btn btn-outline-dark btn-sm"
+                              disabled={false}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              Report
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -593,7 +616,9 @@ exports[`App Component should match test snapshot 1`] = `
                 </div>
               </div>
             </div>
-            <div>
+            <div
+              className="questionDiv"
+            >
               <div
                 className="question container"
               >
@@ -644,7 +669,11 @@ exports[`App Component should match test snapshot 1`] = `
                 >
                   <div
                     className="answerCol col"
-                  />
+                  >
+                    <div
+                      className="answerContainer"
+                    />
+                  </div>
                 </div>
                 <div
                   className="moreAnswersRow row"

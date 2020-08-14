@@ -9,7 +9,8 @@ const Search = (props) => {
 
   const onChangeSearch = (event) => {
     let input = event.target.value.toLowerCase();
-    let questions = props.questions.slice();
+    // make no reference copy
+    let questions = JSON.parse(JSON.stringify(props.questions));
 
     if (input.length >= 3) {
       let filteredQuestions = [];

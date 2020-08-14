@@ -31,7 +31,6 @@ class Question extends React.Component {
     if (!_.isEqual(this.props, prevProps)) {
       this.setState({
         question: this.props.question,
-        answers: this.props.question.answers,
         isMoreAnswers: this.props.question.answers.isMoreAnswers,
         helpfulness: this.props.question.question_helpfulness,
         helpfulClicked: false,
@@ -78,7 +77,7 @@ class Question extends React.Component {
   }
 
   collapseAnswers() {
-    let answersObj = this.state.answers;
+    let answersObj = this.state.question.answers;
     let shortAnswers = {};
     for (let id in answersObj) {
       if (id !== 'isMoreAnswers') {
@@ -103,8 +102,7 @@ class Question extends React.Component {
   }
 
   render() {
-
-    let answersObj = this.state.answers;
+    let answersObj = this.state.question.answers;
     let answers = [];
     for (let id in answersObj) {
       if (id !== 'isMoreAnswers') {
@@ -144,7 +142,7 @@ class Question extends React.Component {
     }
 
     return (
-      <div ref='questionDiv'>
+      <div className='questionDiv'>
         <Container className='question'>
           <Row>
             <Col xs='auto'><h5>Q: {this.state.question.question_body}</h5></Col>
@@ -157,11 +155,13 @@ class Question extends React.Component {
           </Row>
           <Row className='answerRow'>
             <Col className='answerCol'>
-              {answers.map((answer, index) => {
-                return (
-                  <Answer answer={answer} key={index} />
-                );
-              })}
+              <div className='answerContainer'>
+                {answers.map((answer, index) => {
+                  return (
+                    <Answer answer={answer} key={index} />
+                  );
+                })}
+              </div>
             </Col>
           </Row>
           <Row className='moreAnswersRow'>

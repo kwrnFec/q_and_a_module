@@ -77,7 +77,7 @@ class Answer extends React.Component {
     return (
       <Container className='answer'>
         <Row>
-          <Col>A: {this.props.answer.body}</Col>
+          <Col className='answerBody'>A: {this.props.answer.body}</Col>
         </Row>
         <Row>
           <Col>by {this.props.answer.answerer_name === 'Seller' ? <b>{this.props.answer.answerer_name}</b> : this.props.answer.answerer_name}, {this.convertDate(this.props.answer.date)}

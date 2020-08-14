@@ -1,6 +1,6 @@
 import React from 'react';
 import App from '../components/App.jsx';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import renderer from 'react-test-renderer';
 
 import "regenerator-runtime/runtime.js";
@@ -36,6 +36,27 @@ describe('App Component', () => {
 
     // checks if questions were added to the dom
     expect(questions.length).toBeGreaterThan(0);
+  })
+
+  it('should change to filtered questions and back if more than 3 chars is entered in the search bar', async () => {
+    const wrapper = await mount(<App questions={[]} product_id={0} product_name={'Test Product Name'} />)
+
+    let searchInput = wrapper.find('.searchBar input');
+    await searchInput.simulate('change', { target: { value: 'ruin'} });
+
+    // tests if the functions returned correctly and the correct values were displayed
+    expect(wrapper.state('filterDisplay')).toBe(true);
+    let result = wrapper.state('filteredQuestions')[0].answers[55].body;
+    expect(result).toBe('Only if you want to ruin it!');
+    let displayed = wrapper.find('.answerBody').at(0).props().children[1];
+    expect(displayed).toBe(result);
+
+    await searchInput.simulate('change', { target: { value: 'ru'} });
+
+    // tests if the App displays the original data
+    expect(wrapper.state('filterDisplay')).toBe(false);
+    displayed = wrapper.find('.answerBody').at(0).props().children[1];
+    expect(displayed).toBe('I wouldn\'t machine wash it');
   })
 
   it('should match test snapshot', () => {

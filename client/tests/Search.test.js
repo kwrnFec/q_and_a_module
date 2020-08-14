@@ -24,7 +24,7 @@ describe('App Component', () => {
 
     let searchInput = wrapper.find('.searchInput');
 
-    searchInput.simulate('change', inputEvent);
+    await searchInput.simulate('change', inputEvent);
 
     expect(mockSetFilterState.mock.calls[0][0]).toBe(true);
 

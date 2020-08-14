@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Question Component should match test snapshot 1`] = `
-<div>
+<div
+  className="questionDiv"
+>
   <div
     className="question container"
   >
@@ -54,133 +56,137 @@ exports[`Question Component should match test snapshot 1`] = `
         className="answerCol col"
       >
         <div
-          className="answer container"
+          className="answerContainer"
         >
           <div
-            className="row"
+            className="answer container"
           >
             <div
-              className="col"
+              className="row"
             >
-              A: 
-              I've thrown it in the wash and it seems fine
-            </div>
-          </div>
-          <div
-            className="row"
-          >
-            <div
-              className="col"
-            >
-              by 
-              skilover
-              , 
-              January 04, 2017
-            </div>
-          </div>
-          <div
-            className="thumbnailDiv row"
-          >
-            <div
-              className="thumbnailContainer"
-            >
-              <img
-                className="thumbnail"
-              />
-            </div>
-            <div
-              className="thumbnailContainer"
-            >
-              <img
-                className="thumbnail"
-              />
-            </div>
-          </div>
-          <div
-            className="row"
-          >
-            <div
-              className="aButtonCol col"
-            >
-              <span>
-                Helpful? 
-              </span>
-              <button
-                className="aHelpfulBtn btn btn-outline-dark btn-sm"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
+              <div
+                className="answerBody col"
               >
-                Yes (
-                9
-                )
-              </button>
-              <button
-                className="aReportBtn btn btn-outline-dark btn-sm"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
+                A: 
+                I've thrown it in the wash and it seems fine
+              </div>
+            </div>
+            <div
+              className="row"
+            >
+              <div
+                className="col"
               >
-                Report
-              </button>
+                by 
+                skilover
+                , 
+                January 04, 2017
+              </div>
+            </div>
+            <div
+              className="thumbnailDiv row"
+            >
+              <div
+                className="thumbnailContainer"
+              >
+                <img
+                  className="thumbnail"
+                />
+              </div>
+              <div
+                className="thumbnailContainer"
+              >
+                <img
+                  className="thumbnail"
+                />
+              </div>
+            </div>
+            <div
+              className="row"
+            >
+              <div
+                className="aButtonCol col"
+              >
+                <span>
+                  Helpful? 
+                </span>
+                <button
+                  className="aHelpfulBtn btn btn-outline-dark btn-sm"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Yes (
+                  9
+                  )
+                </button>
+                <button
+                  className="aReportBtn btn btn-outline-dark btn-sm"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Report
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          className="answer container"
-        >
           <div
-            className="row"
+            className="answer container"
           >
             <div
-              className="col"
+              className="row"
             >
-              A: 
-              It says not to
-            </div>
-          </div>
-          <div
-            className="row"
-          >
-            <div
-              className="col"
-            >
-              by 
-              skilover
-              , 
-              January 04, 2017
-            </div>
-          </div>
-          <div
-            className="thumbnailDiv row"
-          />
-          <div
-            className="row"
-          >
-            <div
-              className="aButtonCol col"
-            >
-              <span>
-                Helpful? 
-              </span>
-              <button
-                className="aHelpfulBtn btn btn-outline-dark btn-sm"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
+              <div
+                className="answerBody col"
               >
-                Yes (
-                5
-                )
-              </button>
-              <button
-                className="aReportBtn btn btn-outline-dark btn-sm"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
+                A: 
+                It says not to
+              </div>
+            </div>
+            <div
+              className="row"
+            >
+              <div
+                className="col"
               >
-                Report
-              </button>
+                by 
+                skilover
+                , 
+                January 04, 2017
+              </div>
+            </div>
+            <div
+              className="thumbnailDiv row"
+            />
+            <div
+              className="row"
+            >
+              <div
+                className="aButtonCol col"
+              >
+                <span>
+                  Helpful? 
+                </span>
+                <button
+                  className="aHelpfulBtn btn btn-outline-dark btn-sm"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Yes (
+                  5
+                  )
+                </button>
+                <button
+                  className="aReportBtn btn btn-outline-dark btn-sm"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Report
+                </button>
+              </div>
             </div>
           </div>
         </div>
