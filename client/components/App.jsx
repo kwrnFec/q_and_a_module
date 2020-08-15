@@ -98,6 +98,12 @@ class App extends React.Component {
             I'm sorry, no questions or answers match your query.<br />Please try a different one or click below to Submit your own.
           </Alert>
         );
+      } else if (!this.state.filterDisplay && displayQuestions.length === 0) {
+        displayQuestions = (
+          <Alert variant='secondary' id='noQuestionAlert'>
+            I'm sorry, we could not find any questions or answers for this product.<br />Please try again later or click below to Submit your own.
+          </Alert>
+        );
       }
     }
 
