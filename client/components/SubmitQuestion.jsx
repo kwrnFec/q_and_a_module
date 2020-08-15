@@ -28,7 +28,10 @@ const SubmitQuestion = (props) => {
         email: emailInput
       }
 
-      axios.post('/question/add', questionSubmission);
+      axios.post('/question/add', questionSubmission)
+        .catch((err) => {
+          console.log(err);
+        })
 
       setValidEntry(true);
       props.handleCloseSubmit();

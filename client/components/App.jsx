@@ -109,6 +109,7 @@ class App extends React.Component {
 
     let seeMoreQuestions = <span></span>;
     if (this.state.isMoreQuestions) {
+      // Button will not display while displaying filtered questions
       seeMoreQuestions = <Button variant='outline-dark' className='moreQsButton'
         style={Array.isArray(displayQuestions) ? null : { display: 'none' } }
         onClick={() => this.getQuestions(this.state.questions.length + 2)} >More Answered Questions</Button>
@@ -156,7 +157,6 @@ class App extends React.Component {
       </div>
     );
   }
-
 }
 
 export default App;

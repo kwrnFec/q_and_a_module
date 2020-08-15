@@ -28,9 +28,7 @@ class Answer extends React.Component {
     }
     axios.put('/answer/helpful', { answer_id })
       .catch((err) => {
-        // commented for tests
-        // un-comment to check errors
-        // console.log(err);
+        console.log(err);
       })
     this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
   }
@@ -42,9 +40,7 @@ class Answer extends React.Component {
     }
     axios.put('/answer/report', { answer_id })
       .catch((err) => {
-        // commented for tests
-        // un-comment to check errors
-        // console.log(err);
+        console.log(err);
       })
     this.setState({ reported: true });
   }
@@ -63,7 +59,6 @@ class Answer extends React.Component {
   }
 
   render() {
-
     let reportButton = <Button variant="outline-dark" size="sm" className="aReportBtn" onClick={this.reportAnswer} >Report</Button>;
     if (this.state.reported) {
       reportButton = <Button variant="secondary" size="sm" className="aReportBtn btn-secondary" >Reported</Button>;
@@ -85,24 +80,22 @@ class Answer extends React.Component {
         </Row>
         <Row className='thumbnailDiv'>
           {this.props.answer.photos.map((photo, index) => {
-            return(
-              <div className = 'thumbnailContainer' key = { index } >
+            return (
+              <div className='thumbnailContainer' key={index} >
                 <img className='thumbnail' src={photo.url} />
               </div>
             );
           })}
         </Row>
-      <Row>
-        <Col className='aButtonCol'><span>Helpful? </span>
-          {helpfulButton}
-          {reportButton}
-        </Col>
-      </Row>
+        <Row>
+          <Col className='aButtonCol'><span>Helpful? </span>
+            {helpfulButton}
+            {reportButton}
+          </Col>
+        </Row>
       </Container >
     );
-
   }
-
 }
 
 export default Answer;

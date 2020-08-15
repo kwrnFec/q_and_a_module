@@ -43,11 +43,12 @@ class Question extends React.Component {
 
   incrementHelpfulQuestion() {
     axios.put('/question/helpful', { question_id: this.state.question.question_id });
+
     this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
   }
 
   reportQuestion() {
-    axios.put('/question/report', { question_id: this.state.question.question_id })
+    axios.put('/question/report', { question_id: this.state.question.question_id });
 
     this.setState({ reported: true });
   }
