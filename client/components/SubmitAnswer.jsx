@@ -72,7 +72,7 @@ const SubmitAnswer = (props) => {
 
       <Modal show={props.show} onHide={props.handleCloseSubmit} className='submitAnswerModal'>
         <Modal.Header closeButton>
-          <Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">
             <h3>Submit your Answer</h3>
             <h5>{props.product_name}: {props.question_body}</h5>
           </Modal.Title>

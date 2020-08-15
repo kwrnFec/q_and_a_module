@@ -83,6 +83,7 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                       >
                         <div
                           class="modal-title h4"
+                          id="contained-modal-title-vcenter"
                         >
                           <h3>
                             Ask Your Question
@@ -146,10 +147,14 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                             placeholder="Example: jackson11!"
                             type="text"
                           />
+                          <div
+                            class="inputMessage"
+                          >
+                            <p>
+                              For privacy reasons, do not use your full name or email address.
+                            </p>
+                          </div>
                         </div>
-                        <p>
-                          For privacy reasons, do not use your full name or email address.
-                        </p>
                         <div
                           class="mb-3 input-group"
                         >
@@ -168,10 +173,14 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                             placeholder="Example: mwatney@mars.com"
                             type="text"
                           />
+                          <div
+                            class="inputMessage"
+                          >
+                            <p>
+                              For authentication reasons, you will not be emailed.
+                            </p>
+                          </div>
                         </div>
-                        <p>
-                          For authentication reasons, you will not be emailed.
-                        </p>
                       </div>
                       <div
                         class="modal-footer"
@@ -218,6 +227,7 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                           >
                             <div
                               class="modal-title h4"
+                              id="contained-modal-title-vcenter"
                             >
                               <h3>
                                 Ask Your Question
@@ -281,10 +291,14 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                                 placeholder="Example: jackson11!"
                                 type="text"
                               />
+                              <div
+                                class="inputMessage"
+                              >
+                                <p>
+                                  For privacy reasons, do not use your full name or email address.
+                                </p>
+                              </div>
                             </div>
-                            <p>
-                              For privacy reasons, do not use your full name or email address.
-                            </p>
                             <div
                               class="mb-3 input-group"
                             >
@@ -303,10 +317,14 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                                 placeholder="Example: mwatney@mars.com"
                                 type="text"
                               />
+                              <div
+                                class="inputMessage"
+                              >
+                                <p>
+                                  For authentication reasons, you will not be emailed.
+                                </p>
+                              </div>
                             </div>
-                            <p>
-                              For authentication reasons, you will not be emailed.
-                            </p>
                           </div>
                           <div
                             class="modal-footer"
@@ -361,6 +379,7 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                       >
                         <div
                           class="modal-title h4"
+                          id="contained-modal-title-vcenter"
                         >
                           <h3>
                             Ask Your Question
@@ -424,10 +443,14 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                             placeholder="Example: jackson11!"
                             type="text"
                           />
+                          <div
+                            class="inputMessage"
+                          >
+                            <p>
+                              For privacy reasons, do not use your full name or email address.
+                            </p>
+                          </div>
                         </div>
-                        <p>
-                          For privacy reasons, do not use your full name or email address.
-                        </p>
                         <div
                           class="mb-3 input-group"
                         >
@@ -446,10 +469,14 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                             placeholder="Example: mwatney@mars.com"
                             type="text"
                           />
+                          <div
+                            class="inputMessage"
+                          >
+                            <p>
+                              For authentication reasons, you will not be emailed.
+                            </p>
+                          </div>
                         </div>
-                        <p>
-                          For authentication reasons, you will not be emailed.
-                        </p>
                       </div>
                       <div
                         class="modal-footer"
@@ -513,6 +540,7 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                     >
                       <div
                         class="modal-title h4"
+                        id="contained-modal-title-vcenter"
                       >
                         <h3>
                           Ask Your Question
@@ -576,10 +604,14 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                           placeholder="Example: jackson11!"
                           type="text"
                         />
+                        <div
+                          class="inputMessage"
+                        >
+                          <p>
+                            For privacy reasons, do not use your full name or email address.
+                          </p>
+                        </div>
                       </div>
-                      <p>
-                        For privacy reasons, do not use your full name or email address.
-                      </p>
                       <div
                         class="mb-3 input-group"
                       >
@@ -598,10 +630,14 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                           placeholder="Example: mwatney@mars.com"
                           type="text"
                         />
+                        <div
+                          class="inputMessage"
+                        >
+                          <p>
+                            For authentication reasons, you will not be emailed.
+                          </p>
+                        </div>
                       </div>
-                      <p>
-                        For authentication reasons, you will not be emailed.
-                      </p>
                     </div>
                     <div
                       class="modal-footer"
@@ -722,12 +758,16 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                           <div
                             className="modal-header"
                           >
-                            <ModalTitle>
+                            <ModalTitle
+                              id="contained-modal-title-vcenter"
+                            >
                               <ForwardRef
                                 className="modal-title"
+                                id="contained-modal-title-vcenter"
                               >
                                 <div
                                   className="modal-title h4"
+                                  id="contained-modal-title-vcenter"
                                 >
                                   <h3>
                                     Ask Your Question
@@ -837,11 +877,15 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                                     type="text"
                                   />
                                 </FormControl>
+                                <div
+                                  className="inputMessage"
+                                >
+                                  <p>
+                                    For privacy reasons, do not use your full name or email address.
+                                  </p>
+                                </div>
                               </div>
                             </InputGroup>
-                            <p>
-                              For privacy reasons, do not use your full name or email address.
-                            </p>
                             <InputGroup
                               className="mb-3"
                             >
@@ -878,11 +922,15 @@ exports[`SubmitQuestion Component should match snapshot when show=true 1`] = `
                                     type="text"
                                   />
                                 </FormControl>
+                                <div
+                                  className="inputMessage"
+                                >
+                                  <p>
+                                    For authentication reasons, you will not be emailed.
+                                  </p>
+                                </div>
                               </div>
                             </InputGroup>
-                            <p>
-                              For authentication reasons, you will not be emailed.
-                            </p>
                           </div>
                         </ModalBody>
                         <ModalFooter>

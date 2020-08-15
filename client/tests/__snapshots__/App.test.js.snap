@@ -108,6 +108,7 @@ exports[`App Component should match test snapshot 1`] = `
                     <div
                       className="answerContainer"
                     >
+                      <span />
                       <div
                         className="answer container"
                       >
@@ -318,6 +319,7 @@ exports[`App Component should match test snapshot 1`] = `
                     <div
                       className="answerContainer"
                     >
+                      <span />
                       <div
                         className="answer container"
                       >
@@ -528,6 +530,7 @@ exports[`App Component should match test snapshot 1`] = `
                     <div
                       className="answerContainer"
                     >
+                      <span />
                       <div
                         className="answer container"
                       >
@@ -672,7 +675,17 @@ exports[`App Component should match test snapshot 1`] = `
                   >
                     <div
                       className="answerContainer"
-                    />
+                    >
+                      <div
+                        className="fade alert alert-secondary show"
+                        id="noAnswerAlert"
+                        role="alert"
+                      >
+                        I'm sorry, no one has answered this question yet.
+                        <br />
+                        If you have an answer please Submit it below.
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div

@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
 
 class Question extends React.Component {
   constructor(props) {
@@ -121,6 +122,15 @@ class Question extends React.Component {
       }
     }
 
+    let noAnswers = <span></span>;
+    if (answers.length === 0) {
+      noAnswers = (
+        <Alert variant='secondary' id='noAnswerAlert'>
+          I'm sorry, no one has answered this question yet.<br />If you have an answer please Submit it below.
+        </Alert>
+      );
+    }
+
     let moreAnswers;
     if (this.state.isMoreAnswers) {
       moreAnswers = <Button variant='outline-dark' className='moreAnswers' onClick={this.getMoreAnswers.bind(this)}>See More Answers</Button>;
@@ -156,6 +166,7 @@ class Question extends React.Component {
           <Row className='answerRow'>
             <Col className='answerCol'>
               <div className='answerContainer'>
+                {noAnswers}
                 {answers.map((answer, index) => {
                   return (
                     <Answer answer={answer} key={index} />

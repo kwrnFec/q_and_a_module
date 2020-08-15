@@ -58,6 +58,7 @@ exports[`Question Component should match test snapshot 1`] = `
         <div
           className="answerContainer"
         >
+          <span />
           <div
             className="answer container"
           >

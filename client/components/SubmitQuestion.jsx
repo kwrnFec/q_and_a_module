@@ -45,7 +45,7 @@ const SubmitQuestion = (props) => {
 
       <Modal show={props.show} onHide={props.handleCloseSubmit}>
         <Modal.Header closeButton>
-          <Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">
             <h3>Ask Your Question</h3>
             <h5>About the {props.product_name}</h5>
           </Modal.Title>
@@ -69,8 +69,10 @@ const SubmitQuestion = (props) => {
               placeholder='Example: jackson11!'
               onChange={(event) => setNicknameInput(event.target.value)}
             />
+            <div className='inputMessage'>
+              <p>For privacy reasons, do not use your full name or email address.</p>
+            </div>
           </InputGroup>
-          <p>For privacy reasons, do not use your full name or email address.</p>
 
           <InputGroup className="mb-3">
             <InputGroup.Prepend>
@@ -80,8 +82,10 @@ const SubmitQuestion = (props) => {
               placeholder='Example: mwatney@mars.com'
               onChange={(event) => setEmailInput(event.target.value)}
             />
+            <div className='inputMessage'>
+              <p>For authentication reasons, you will not be emailed.</p>
+            </div>
           </InputGroup>
-          <p>For authentication reasons, you will not be emailed.</p>
 
         </Modal.Body>
         <Modal.Footer>
