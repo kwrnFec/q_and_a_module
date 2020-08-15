@@ -37,7 +37,10 @@ const SubmitAnswer = (props) => {
         photos: imgUrls
       }
 
-      axios.post('/answer/add', answerSubmission);
+      axios.post('/answer/add', answerSubmission)
+        .catch((err) => {
+          console.log(err);
+        })
 
       setValidEntry(true);
       props.handleCloseSubmit();
@@ -72,7 +75,7 @@ const SubmitAnswer = (props) => {
 
       <Modal show={props.show} onHide={props.handleCloseSubmit} className='submitAnswerModal'>
         <Modal.Header closeButton>
-          <Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">
             <h3>Submit your Answer</h3>
             <h5>{props.product_name}: {props.question_body}</h5>
           </Modal.Title>
@@ -137,7 +140,7 @@ const SubmitAnswer = (props) => {
               <p>Press enter/return key to add entered url.</p>
             </div>
 
-            <Alert variant='danger'style={invalidUrl ? null : { display: 'none' }}>
+            <Alert variant='danger' style={invalidUrl ? null : { display: 'none' }}>
               I'm sorry, that is not a functional image url. Please try a different one.
             </Alert>
           </InputGroup>

@@ -2,22 +2,24 @@ import React from 'react';
 import axios from 'axios';
 import "regenerator-runtime/runtime.js";
 
-
 import Question from './Question.jsx';
 import SubmitQuestion from './SubmitQuestion.jsx';
 import Search from './Search.jsx';
+import Chevron from './Chevron.jsx';
 
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
+import Alert from 'react-bootstrap/Alert';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      accOpen: false,
       // props.questions is for testing purposes
       questions: this.props.questions,
       product_name: this.props.product_name,
@@ -75,7 +77,7 @@ class App extends React.Component {
   render() {
     // handles undefined props.questions
     let displayQuestions = <span></span>;
-    if (this.state.questions) {
+    if (Array.isArray(this.state.questions)) {
       let questions = this.state.questions;
       if (this.state.filterDisplay) {
         questions = this.state.filteredQuestions;
@@ -89,11 +91,27 @@ class App extends React.Component {
           />
         );
       })
+
+      if (this.state.filterDisplay && displayQuestions.length === 0) {
+        displayQuestions = (
+          <Alert variant='secondary' id='noQuestionAlert'>
+            I'm sorry, no questions or answers match your query.<br />Please try a different one or click below to Submit your own.
+          </Alert>
+        );
+      } else if (!this.state.filterDisplay && displayQuestions.length === 0) {
+        displayQuestions = (
+          <Alert variant='secondary' id='noQuestionAlert'>
+            I'm sorry, we could not find any questions or answers for this product.<br />Please try again later or click below to Submit your own.
+          </Alert>
+        );
+      }
     }
 
     let seeMoreQuestions = <span></span>;
     if (this.state.isMoreQuestions) {
+      // Button will not display while displaying filtered questions
       seeMoreQuestions = <Button variant='outline-dark' className='moreQsButton'
+        style={Array.isArray(displayQuestions) ? null : { display: 'none' } }
         onClick={() => this.getQuestions(this.state.questions.length + 2)} >More Answered Questions</Button>
     }
 
@@ -101,11 +119,14 @@ class App extends React.Component {
       <div className='qaApp'>
         <Accordion className='qaAppInner'>
           <Card>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                Questions and Answers
-              </Accordion.Toggle>
-            </Card.Header>
+            <Accordion.Toggle
+              className='accHeader'
+              as={Card.Header} eventKey="0"
+              onClick={() => this.setState({ accOpen: !this.state.accOpen })}
+            >
+              Questions and Answers
+              <Chevron direction={this.state.accOpen ? 'up' : 'down'} />
+            </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <Search
@@ -136,7 +157,8 @@ class App extends React.Component {
       </div>
     );
   }
-
 }
 
 export default App;
+
+

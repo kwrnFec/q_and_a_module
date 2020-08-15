@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
 
 class Question extends React.Component {
   constructor(props) {
@@ -31,7 +32,6 @@ class Question extends React.Component {
     if (!_.isEqual(this.props, prevProps)) {
       this.setState({
         question: this.props.question,
-        answers: this.props.question.answers,
         isMoreAnswers: this.props.question.answers.isMoreAnswers,
         helpfulness: this.props.question.question_helpfulness,
         helpfulClicked: false,
@@ -43,11 +43,12 @@ class Question extends React.Component {
 
   incrementHelpfulQuestion() {
     axios.put('/question/helpful', { question_id: this.state.question.question_id });
+
     this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
   }
 
   reportQuestion() {
-    axios.put('/question/report', { question_id: this.state.question.question_id })
+    axios.put('/question/report', { question_id: this.state.question.question_id });
 
     this.setState({ reported: true });
   }
@@ -78,7 +79,7 @@ class Question extends React.Component {
   }
 
   collapseAnswers() {
-    let answersObj = this.state.answers;
+    let answersObj = this.state.question.answers;
     let shortAnswers = {};
     for (let id in answersObj) {
       if (id !== 'isMoreAnswers') {
@@ -103,8 +104,7 @@ class Question extends React.Component {
   }
 
   render() {
-
-    let answersObj = this.state.answers;
+    let answersObj = this.state.question.answers;
     let answers = [];
     for (let id in answersObj) {
       if (id !== 'isMoreAnswers') {
@@ -121,6 +121,15 @@ class Question extends React.Component {
         let sellerAns = answers.splice(i, 1);
         answers.unshift(sellerAns[0]);
       }
+    }
+
+    let noAnswers = <span></span>;
+    if (answers.length === 0) {
+      noAnswers = (
+        <Alert variant='secondary' id='noAnswerAlert'>
+          I'm sorry, no one has answered this question yet.<br />If you have an answer please Submit it below.
+        </Alert>
+      );
     }
 
     let moreAnswers;
@@ -144,7 +153,7 @@ class Question extends React.Component {
     }
 
     return (
-      <div ref='questionDiv'>
+      <div className='questionDiv'>
         <Container className='question'>
           <Row>
             <Col xs='auto'><h5>Q: {this.state.question.question_body}</h5></Col>
@@ -157,11 +166,14 @@ class Question extends React.Component {
           </Row>
           <Row className='answerRow'>
             <Col className='answerCol'>
-              {answers.map((answer, index) => {
-                return (
-                  <Answer answer={answer} key={index} />
-                );
-              })}
+              <div className='answerContainer'>
+                {noAnswers}
+                {answers.map((answer, index) => {
+                  return (
+                    <Answer answer={answer} key={index} />
+                  );
+                })}
+              </div>
             </Col>
           </Row>
           <Row className='moreAnswersRow'>

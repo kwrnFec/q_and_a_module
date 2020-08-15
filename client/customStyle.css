@@ -10,18 +10,26 @@ body {
   justify-content: center;
 }
 
-.moreAnswersRow, .seeMoreQs, .submitQButton {
+.moreAnswersRow, .seeMoreQs {
+  display: flex;
+  justify-content: center;
+}
+
+.submitQButton {
+  margin-top: 10px;
+  margin-bottom: -5px;
+  margin-left: -5px;
   display: flex;
   justify-content: center;
 }
 
 .qaAppInner {
-  width: 80vw;
+  width: 85vw;
 }
 
 .qaDisplay {
   margin-left: 1vh;
-  max-height: 69vh;
+  max-height: 70vh;
   overflow-y: auto;
 }
 
@@ -39,10 +47,20 @@ body {
   margin-left: 3vh;
 }
 
-.answerRow {
+.answerCol {
+  display: flex;
+  justify-content: center;
+}
+
+.answerContainer {
+  border: dotted lightgray;
+  border-radius: 10px;
+  margin-top: 5px;
+  width: 80%;
   max-height: 50vh;
   overflow-y: auto;
   display: flex;
+  flex-direction: column;
 }
 
 .qHelpfulBtn, .aHelpfulBtn {
@@ -59,6 +77,11 @@ body {
   width: 300px;
 }
 
+#noAnswerAlert, #noQuestionAlert {
+  text-align: center;
+  margin-bottom: 0;
+}
+
 .searchBar {
   display: flex;
   justify-content: center;
@@ -66,6 +89,7 @@ body {
 }
 
 .thumbnailDiv {
+  margin-bottom: 4px;
   display: flex;
   max-height: 20vh;
   overflow-y: hidden;
@@ -85,11 +109,14 @@ body {
 }
 
 .submitAnswerRow {
+  margin-top: 2px;
   display: flex;
   justify-content: center;
 }
 
-.filePickerContainer {
+/* Commented lines are for possible future feature
+  that allows for image upload */
+/* .filePickerContainer {
   display: flex;
   justify-content: center;
 }
@@ -107,7 +134,7 @@ body {
 
 input[type="file"] {
   display: none;
-}
+} */
 
 .inputMessage {
   display: flex;
@@ -115,4 +142,62 @@ input[type="file"] {
   padding-top: 2vh;
   padding-bottom: -2vh;
   width: 100%;
+}
+
+.accHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 8vh;
+  color: grey;
+}
+
+.accHeader:hover {
+  color: black;
+  cursor: pointer;
+}
+
+#contained-modal-title-vcenter {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: rgb(229, 233, 236);
+  color: black;
+  padding: 15px;
+  border: solid 1px rgb(199, 206, 212);
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+}
+
+/* Custom Scroll Bars */
+.qaDisplay::-webkit-scrollbar {
+  width: 14px;
+}
+
+.qaDisplay::-webkit-scrollbar-track {
+  background: white;
+}
+
+.qaDisplay::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  background: #888;
+}
+
+.qaDisplay::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.answerContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.answerContainer::-webkit-scrollbar-track {
+  background: white;
+}
+
+.answerContainer::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #888;
+}
+
+.answerContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
