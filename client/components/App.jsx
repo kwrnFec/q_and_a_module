@@ -40,7 +40,7 @@ class App extends React.Component {
   }
 
   async getQuestions(qLimit = 2, aLimit = 2) {
-    let response = await axios.get('/questions', {
+    let response = await axios.get('/qa/questions', {
       params: {
         qLimit: qLimit,
         aLimit: aLimit,

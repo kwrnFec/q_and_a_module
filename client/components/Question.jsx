@@ -42,19 +42,19 @@ class Question extends React.Component {
   }
 
   incrementHelpfulQuestion() {
-    axios.put('/question/helpful', { question_id: this.state.question.question_id });
+    axios.put('/qa/question/helpful', { question_id: this.state.question.question_id });
 
     this.setState({ helpfulness: this.state.helpfulness + 1, helpfulClicked: true });
   }
 
   reportQuestion() {
-    axios.put('/question/report', { question_id: this.state.question.question_id });
+    axios.put('/qa/question/report', { question_id: this.state.question.question_id });
 
     this.setState({ reported: true });
   }
 
   async getMoreAnswers() {
-    let response = await axios.get('/moreAnswers', {
+    let response = await axios.get('/qa/moreAnswers', {
       params: {
         question_id: this.state.question.question_id
       }

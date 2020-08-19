@@ -135,7 +135,7 @@ exports[`App Component should match test snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          className="thumbnailDiv row"
+                          className="answerThumbnailDiv row"
                         />
                         <div
                           className="row"
@@ -193,7 +193,7 @@ exports[`App Component should match test snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          className="thumbnailDiv row"
+                          className="answerThumbnailDiv row"
                         />
                         <div
                           className="row"
@@ -346,7 +346,7 @@ exports[`App Component should match test snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          className="thumbnailDiv row"
+                          className="answerThumbnailDiv row"
                         />
                         <div
                           className="row"
@@ -404,7 +404,7 @@ exports[`App Component should match test snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          className="thumbnailDiv row"
+                          className="answerThumbnailDiv row"
                         />
                         <div
                           className="row"
@@ -557,7 +557,7 @@ exports[`App Component should match test snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          className="thumbnailDiv row"
+                          className="answerThumbnailDiv row"
                         />
                         <div
                           className="row"

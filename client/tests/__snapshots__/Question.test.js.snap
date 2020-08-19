@@ -85,20 +85,20 @@ exports[`Question Component should match test snapshot 1`] = `
               </div>
             </div>
             <div
-              className="thumbnailDiv row"
+              className="answerThumbnailDiv row"
             >
               <div
-                className="thumbnailContainer"
+                className="answerThumbnailContainer"
               >
                 <img
-                  className="thumbnail"
+                  className="answerThumbnail"
                 />
               </div>
               <div
-                className="thumbnailContainer"
+                className="answerThumbnailContainer"
               >
                 <img
-                  className="thumbnail"
+                  className="answerThumbnail"
                 />
               </div>
             </div>
@@ -158,7 +158,7 @@ exports[`Question Component should match test snapshot 1`] = `
               </div>
             </div>
             <div
-              className="thumbnailDiv row"
+              className="answerThumbnailDiv row"
             />
             <div
               className="row"

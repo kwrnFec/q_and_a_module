@@ -6,10 +6,10 @@ const testMoreAnswers = { "answers": [{ "answer_id": 43, "body": "I wouldn't mac
 export default {
   get: jest.fn((url) => {
     switch (url) {
-      case '/questions':
+      case '/qa/questions':
         return Promise.resolve({ data: { questions: testQuestionList } });
 
-      case '/moreAnswers':
+      case '/qa/moreAnswers':
         return Promise.resolve({ data: testMoreAnswers });
 
     }

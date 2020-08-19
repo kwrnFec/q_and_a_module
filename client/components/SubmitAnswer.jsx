@@ -37,7 +37,7 @@ const SubmitAnswer = (props) => {
         photos: imgUrls
       }
 
-      axios.post('/answer/add', answerSubmission)
+      axios.post('/qa/answer/add', answerSubmission)
         .catch((err) => {
           console.log(err);
         })

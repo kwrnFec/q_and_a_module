@@ -7,4 +7,4 @@ import App from './components/App.jsx';
 
 
 // Will have to somehow get product_id and product_name from proxy request to here
-ReactDom.render(<App questions={[]} product_id={5} product_name={'Heir Force Ones'}/>, document.getElementById('app'));
+ReactDom.render(<App questions={[]} product_id={5} product_name={'Heir Force Ones'}/>, document.getElementById('qaModule'));
