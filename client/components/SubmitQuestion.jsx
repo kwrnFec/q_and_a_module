@@ -28,7 +28,7 @@ const SubmitQuestion = (props) => {
         email: emailInput
       }
 
-      axios.post('/question/add', questionSubmission)
+      axios.post('/qa/question/add', questionSubmission)
         .catch((err) => {
           console.log(err);
         })

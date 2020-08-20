@@ -14,7 +14,9 @@ exports[`App Component should match test snapshot 1`] = `
         className="accHeader card-header"
         onClick={[Function]}
       >
-        Questions and Answers
+        <h6>
+          Questions and Answers
+        </h6>
         <svg
           fill="currentColor"
           height="20px"
@@ -135,7 +137,7 @@ exports[`App Component should match test snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          className="thumbnailDiv row"
+                          className="answerThumbnailDiv row"
                         />
                         <div
                           className="row"
@@ -193,7 +195,7 @@ exports[`App Component should match test snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          className="thumbnailDiv row"
+                          className="answerThumbnailDiv row"
                         />
                         <div
                           className="row"
@@ -346,7 +348,7 @@ exports[`App Component should match test snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          className="thumbnailDiv row"
+                          className="answerThumbnailDiv row"
                         />
                         <div
                           className="row"
@@ -404,7 +406,7 @@ exports[`App Component should match test snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          className="thumbnailDiv row"
+                          className="answerThumbnailDiv row"
                         />
                         <div
                           className="row"
@@ -557,7 +559,7 @@ exports[`App Component should match test snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          className="thumbnailDiv row"
+                          className="answerThumbnailDiv row"
                         />
                         <div
                           className="row"

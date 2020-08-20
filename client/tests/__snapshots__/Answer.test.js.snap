@@ -27,20 +27,22 @@ exports[`Answer Component should match test snapshot 1`] = `
     </div>
   </div>
   <div
-    className="thumbnailDiv row"
+    className="answerThumbnailDiv row"
   >
     <div
-      className="thumbnailContainer"
+      className="answerThumbnailContainer"
     >
       <img
-        className="thumbnail"
+        className="answerThumbnail"
+        src="https://images.unsplash.com/photo-1510551310160-589462daf284?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80"
       />
     </div>
     <div
-      className="thumbnailContainer"
+      className="answerThumbnailContainer"
     >
       <img
-        className="thumbnail"
+        className="answerThumbnail"
+        src="https://images.unsplash.com/photo-1469504512102-900f29606341?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
       />
     </div>
   </div>

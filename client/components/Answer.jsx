@@ -26,7 +26,7 @@ class Answer extends React.Component {
     if (this.props.answer.answer_id) {
       answer_id = this.props.answer.answer_id;
     }
-    axios.put('/answer/helpful', { answer_id })
+    axios.put('/qa/answer/helpful', { answer_id })
       .catch((err) => {
         console.log(err);
       })
@@ -38,7 +38,7 @@ class Answer extends React.Component {
     if (this.props.answer.answer_id) {
       answer_id = this.props.answer.answer_id;
     }
-    axios.put('/answer/report', { answer_id })
+    axios.put('/qa/answer/report', { answer_id })
       .catch((err) => {
         console.log(err);
       })
@@ -78,11 +78,14 @@ class Answer extends React.Component {
           <Col>by {this.props.answer.answerer_name === 'Seller' ? <b>{this.props.answer.answerer_name}</b> : this.props.answer.answerer_name}, {this.convertDate(this.props.answer.date)}
           </Col>
         </Row>
-        <Row className='thumbnailDiv'>
+        <Row className='answerThumbnailDiv'>
           {this.props.answer.photos.map((photo, index) => {
+            if (photo.url) {
+              photo = photo.url;
+            }
             return (
-              <div className='thumbnailContainer' key={index} >
-                <img className='thumbnail' src={photo.url} />
+              <div className='answerThumbnailContainer' key={index} >
+                <img className='answerThumbnail' src={photo} />
               </div>
             );
           })}
