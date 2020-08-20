@@ -11,9 +11,7 @@ WORKDIR /qaModule
 COPY . /qaModule
 
 # Does your app have any dependencies that should be installed?
-RUN npm install nodemon @babel/preset-react axios bootstrap express lodash react react-bootstrap react-dom webpack webpack-cli
-
-RUN npm install @babel/core @babel/preset-env babel-loader babel-preset-react css-loader style-loader
+RUN npm install
 
 # What port will the container talk to the outside world with once created?
 EXPOSE 3001
