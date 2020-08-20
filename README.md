@@ -17,7 +17,7 @@
 
 ## Usage
 
-> To run the app locally, run "npm run server-dev" on the terminal, then
+> To run the app locally, run "npm run server" on the terminal, then
   navigate to localhost:3001 in your web browser.
 
 ## Requirements
