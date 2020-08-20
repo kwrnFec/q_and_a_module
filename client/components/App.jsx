@@ -124,7 +124,7 @@ class App extends React.Component {
               as={Card.Header} eventKey="0"
               onClick={() => this.setState({ accOpen: !this.state.accOpen })}
             >
-              Questions and Answers
+              <h6>Questions and Answers</h6>
               <Chevron direction={this.state.accOpen ? 'up' : 'down'} />
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
@@ -145,6 +145,7 @@ class App extends React.Component {
                 <SubmitQuestion
                   handleOpenSubmit={this.handleOpenSubmit}
                   handleCloseSubmit={this.handleCloseSubmit}
+                  addQuestion={this.addQuestion}
                   product_name={this.state.product_name}
                   product_id={this.state.product_id}
                   show={this.state.showSubmitQuestion}

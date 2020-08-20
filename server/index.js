@@ -2,6 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const path = require("path");
 const apiUrl = 'http://52.26.193.201:3000/';
+const prefix = '/qa';
 
 let app = express();
 
@@ -20,7 +21,7 @@ app.get('/qaModule', (req, res) => {
   res.sendFile(path.resolve(__dirname + '/../public/dist/bundle.js'));
 });
 
-app.get('/qa/questions', async (req, res) => {
+app.get(prefix + '/questions', async (req, res) => {
   let { qLimit, aLimit, product_id } = req.query;
   let url = apiUrl + 'qa/' + product_id;
 
@@ -61,7 +62,7 @@ app.get('/qa/questions', async (req, res) => {
   res.send({ questions, isMoreQuestions });
 });
 
-app.get('/qa/moreAnswers', (req, res) => {
+app.get(prefix + '/moreAnswers', (req, res) => {
   let { question_id } = req.query;
   let url = apiUrl + `qa/${question_id}/answers`;
 
@@ -76,7 +77,7 @@ app.get('/qa/moreAnswers', (req, res) => {
     })
 });
 
-app.put('/qa/answer/helpful', (req, res) => {
+app.put(prefix + '/answer/helpful', (req, res) => {
   let answer_id = req.body.answer_id;
   let url = apiUrl + `qa/answer/${answer_id}/helpful`;
 
@@ -86,7 +87,7 @@ app.put('/qa/answer/helpful', (req, res) => {
     })
 });
 
-app.put('/qa/answer/report', (req, res) => {
+app.put(prefix + '/answer/report', (req, res) => {
   let answer_id = req.body.answer_id;
   let url = apiUrl + `qa/answer/${answer_id}/report`;
 
@@ -99,7 +100,7 @@ app.put('/qa/answer/report', (req, res) => {
     })
 });
 
-app.put('/qa/question/helpful', (req, res) => {
+app.put(prefix + '/question/helpful', (req, res) => {
   let question_id = req.body.question_id;
   let url = apiUrl + `qa/question/${question_id}/helpful`;
 
@@ -109,7 +110,7 @@ app.put('/qa/question/helpful', (req, res) => {
     })
 });
 
-app.put('/qa/question/report', (req, res) => {
+app.put(prefix + '/question/report', (req, res) => {
   let question_id = req.body.question_id;
   let url = apiUrl + `qa/question/${question_id}/report`;
 
@@ -119,7 +120,7 @@ app.put('/qa/question/report', (req, res) => {
     })
 });
 
-app.post('/qa/question/add', (req, res) => {
+app.post(prefix + '/question/add', (req, res) => {
   let { product_id, ...questionSub } = req.body;
   let url = apiUrl + `qa/${product_id}`;
 
@@ -129,7 +130,7 @@ app.post('/qa/question/add', (req, res) => {
     })
 });
 
-app.post('/qa/answer/add', (req, res) => {
+app.post(prefix + '/answer/add', (req, res) => {
   let { question_id, ...answerSub } = req.body;
   let url = apiUrl + `qa/${question_id}/answers`;
 

@@ -1,10 +1,5 @@
 /* Add custom styling below */
 
-/* remove body styling when deploying */
-body {
-  overflow: hidden;
-}
-
 .qaApp {
   display: flex;
   justify-content: center;

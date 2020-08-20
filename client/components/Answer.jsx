@@ -80,9 +80,12 @@ class Answer extends React.Component {
         </Row>
         <Row className='answerThumbnailDiv'>
           {this.props.answer.photos.map((photo, index) => {
+            if (photo.url) {
+              photo = photo.url;
+            }
             return (
               <div className='answerThumbnailContainer' key={index} >
-                <img className='answerThumbnail' src={photo.url} />
+                <img className='answerThumbnail' src={photo} />
               </div>
             );
           })}
