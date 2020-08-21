@@ -19,7 +19,25 @@
 }
 
 .qaAppInner {
-  width: 85vw;
+  width: 90%;
+}
+
+.accHeaderDiv {
+  background-color: rgb(240, 240, 240);
+  border-color: lightgray;
+  height: 8vh;
+}
+
+.accHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  color: grey;
+}
+
+.accHeader:hover {
+  color: black;
+  cursor: pointer;
 }
 
 .qaDisplay {
@@ -35,11 +53,11 @@
 }
 
 .qButtonRow {
-  margin-left: 5vh;
+  margin-left: 5%;
 }
 
 .aButtonCol {
-  margin-left: 3vh;
+  margin-left: 3%;
 }
 
 .answerCol {
@@ -51,7 +69,7 @@
   border: dotted lightgray;
   border-radius: 10px;
   margin-top: 5px;
-  width: 80%;
+  width: 90%;
   max-height: 50vh;
   overflow-y: auto;
   display: flex;
@@ -161,24 +179,7 @@ input[type="file"] {
   width: 100%;
 }
 
-.accHeader {
-  display: flex;
-  justify-content: space-between;
-  height: 8vh;
-  color: grey;
-  line-height: 100px;
-}
 
-.accHeader:hover {
-  color: black;
-  cursor: pointer;
-}
-
-.accHeader h6 {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
-}
 
 #contained-modal-title-vcenter {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

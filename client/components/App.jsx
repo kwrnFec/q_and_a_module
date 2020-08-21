@@ -119,14 +119,16 @@ class App extends React.Component {
       <div className='qaApp'>
         <Accordion className='qaAppInner'>
           <Card>
-            <Accordion.Toggle
-              className='accHeader'
-              as={Card.Header} eventKey="0"
-              onClick={() => this.setState({ accOpen: !this.state.accOpen })}
-            >
-              <h6>Questions and Answers</h6>
-              <Chevron direction={this.state.accOpen ? 'up' : 'down'} />
-            </Accordion.Toggle>
+            <div className='accHeaderDiv'>
+              <Accordion.Toggle
+                className='accHeader'
+                as={Card.Header} eventKey="0"
+                onClick={() => this.setState({ accOpen: !this.state.accOpen })}
+              >
+                  <h6>Questions and Answers</h6>
+                  <Chevron direction={this.state.accOpen ? 'up' : 'down'} />
+              </Accordion.Toggle>
+            </div>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <Search
