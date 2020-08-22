@@ -22,12 +22,11 @@
 }
 
 .qaAppInner {
-  width: 85%;
+  width: 90%;
 }
 
 .accHeaderDiv {
   background-color: rgb(240, 240, 240);
-  border-color: lightgray;
 }
 
 .accHeader {
@@ -43,7 +42,7 @@
 }
 
 #qaTitle {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 #qaCard {
