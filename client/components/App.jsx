@@ -8,6 +8,7 @@ import Search from './Search.jsx';
 import Chevron from './Chevron.jsx';
 
 import Accordion from 'react-bootstrap/Accordion';
+import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -116,7 +117,7 @@ class App extends React.Component {
     }
 
     return (
-      <div className='qaApp'>
+      <Container className='qaApp'>
         <Accordion className='qaAppInner'>
           <Card>
             <div className='accHeaderDiv'>
@@ -157,7 +158,7 @@ class App extends React.Component {
             </Accordion.Collapse>
           </Card>
         </Accordion>
-      </div>
+      </Container>
     );
   }
 }

@@ -1,4 +1,7 @@
 /* Add custom styling below */
+#qaModule {
+  padding: 1vh;
+}
 
 .qaApp {
   display: flex;
@@ -25,7 +28,6 @@
 .accHeaderDiv {
   background-color: rgb(240, 240, 240);
   border-color: lightgray;
-  height: 6vh;
 }
 
 .accHeader {
@@ -40,12 +42,16 @@
   cursor: pointer;
 }
 
+#qaTitle {
+  font-size: 1.1rem;
+}
+
 #qaCard {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 #qaModule .btn {
-  font-size: 1.3rem !important;
+  font-size: 1.1rem !important;
 }
 
 .qaDisplay {
@@ -62,7 +68,7 @@
 }
 
 .question h5 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .qButtonRow {
@@ -119,7 +125,7 @@
 }
 
 .searchInput{
-  font-size: 1.3rem !important;
+  font-size: 1.1rem !important;
 }
 
 .thumbnailDiv {

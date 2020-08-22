@@ -2,7 +2,7 @@
 
 exports[`App Component should match test snapshot 1`] = `
 <div
-  className="qaApp"
+  className="qaApp container"
 >
   <div
     className="qaAppInner accordion"
@@ -17,14 +17,16 @@ exports[`App Component should match test snapshot 1`] = `
           className="accHeader card-header"
           onClick={[Function]}
         >
-          <h6>
+          <h4
+            id="qaTitle"
+          >
             Questions and Answers
-          </h6>
+          </h4>
           <svg
             fill="currentColor"
-            height="20px"
+            height="25px"
             viewBox="0 0 1792 1792"
-            width="20px"
+            width="25px"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -39,6 +41,7 @@ exports[`App Component should match test snapshot 1`] = `
       >
         <div
           className="card-body"
+          id="qaCard"
         >
           <div
             className="searchBar"
