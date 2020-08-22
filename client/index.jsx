@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-import './standardChrome.css';
 import './customStyle.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

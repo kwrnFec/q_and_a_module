@@ -13,19 +13,19 @@
 .submitQButton {
   margin-top: 10px;
   margin-bottom: -5px;
-  margin-left: -5px;
+  margin-right: 0.75%;
   display: flex;
   justify-content: center;
 }
 
 .qaAppInner {
-  width: 90%;
+  width: 85%;
 }
 
 .accHeaderDiv {
   background-color: rgb(240, 240, 240);
   border-color: lightgray;
-  height: 8vh;
+  height: 6vh;
 }
 
 .accHeader {
@@ -40,16 +40,29 @@
   cursor: pointer;
 }
 
+#qaCard {
+  font-size: 1.3rem;
+}
+
+#qaModule .btn {
+  font-size: 1.3rem !important;
+}
+
 .qaDisplay {
   width: 100%;
-  max-height: 70vh;
+  max-height: 77vh;
   overflow-y: auto;
 }
 
 .question {
+  max-width: none !important;
   border: 2px solid lightgray;
   border-radius: 20px;
   margin: 5px;
+}
+
+.question h5 {
+  font-size: 1.3rem;
 }
 
 .qButtonRow {
@@ -76,8 +89,12 @@
   flex-direction: column;
 }
 
+.answer {
+  max-width: none !important;
+}
+
 .qHelpfulBtn, .aHelpfulBtn {
-  width: 75px;
+  width: 90px;
 }
 
 .qReportBtn, .aReportBtn {
@@ -101,6 +118,10 @@
   margin: 0;
 }
 
+.searchInput{
+  font-size: 1.3rem !important;
+}
+
 .thumbnailDiv {
   margin-bottom: 4px;
   display: flex;
@@ -120,7 +141,6 @@
   width: 100%;
   height: auto;
 }
-
 
 .answerThumbnailDiv {
   margin-bottom: 4px;
