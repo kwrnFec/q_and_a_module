@@ -8,6 +8,7 @@ import Search from './Search.jsx';
 import Chevron from './Chevron.jsx';
 
 import Accordion from 'react-bootstrap/Accordion';
+import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -116,19 +117,21 @@ class App extends React.Component {
     }
 
     return (
-      <div className='qaApp'>
+      <Container className='qaApp'>
         <Accordion className='qaAppInner'>
           <Card>
-            <Accordion.Toggle
-              className='accHeader'
-              as={Card.Header} eventKey="0"
-              onClick={() => this.setState({ accOpen: !this.state.accOpen })}
-            >
-              <h6>Questions and Answers</h6>
-              <Chevron direction={this.state.accOpen ? 'up' : 'down'} />
-            </Accordion.Toggle>
+            <div className='accHeaderDiv'>
+              <Accordion.Toggle
+                className='accHeader'
+                as={Card.Header} eventKey="0"
+                onClick={() => this.setState({ accOpen: !this.state.accOpen })}
+              >
+                  <h4 id='qaTitle'>Questions and Answers</h4>
+                  <Chevron direction={this.state.accOpen ? 'up' : 'down'} />
+              </Accordion.Toggle>
+            </div>
             <Accordion.Collapse eventKey="0">
-              <Card.Body>
+              <Card.Body id='qaCard'>
                 <Search
                   questions={this.state.questions}
                   setFilterState={(bool) => this.setState({ filterDisplay: bool })}
@@ -155,7 +158,7 @@ class App extends React.Component {
             </Accordion.Collapse>
           </Card>
         </Accordion>
-      </div>
+      </Container>
     );
   }
 }
