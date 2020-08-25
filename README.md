@@ -2,6 +2,9 @@
 
 > This repo includes the code needed for the Questions and Answers module of an item description page.
 
+## Demonstration Video
+  - https://youtu.be/R0CHi9YD81g
+
 ## Related Projects
 
   - https://github.com/kwrnFec/related_items_module
